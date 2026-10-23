@@ -60,7 +60,8 @@ CREATE TABLE download_attempts (
         'before_finalize',
         'finalize',
         'register',
-        'complete'
+        'complete',
+        'schema-check'
     )),
     started_at TEXT NOT NULL,
     finished_at TEXT,
