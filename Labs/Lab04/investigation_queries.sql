@@ -1,11 +1,12 @@
+-- Enable foreign key checks
 PRAGMA foreign_keys = ON;
 
--- Attempts by request and outcome.
+-- Count attempts by request and status
 SELECT r.request_id, a.status, COUNT(a.attempt_id) AS attempts
 FROM processing_requests r LEFT JOIN processing_attempts a ON a.request_id=r.request_id
 GROUP BY r.request_id,a.status ORDER BY r.request_id,a.status;
 
--- Trace each produced NDVI output to the two acquired inputs and their origins.
+-- Trace each NDVI output back to its inputs
 SELECT o.artifact_id AS ndvi_artifact, a.attempt_id AS producing_attempt,
        r.request_id, r.normalized_json, i.role, p.artifact_id AS input_artifact,
        f.artifact_id AS acquisition_artifact, s.subset_id, s.aoi_json, s.recipe_version,
@@ -26,23 +27,22 @@ FROM processing_inputs i
 JOIN processing_artifact_locations l ON l.artifact_id=i.artifact_id
 ORDER BY i.request_id,i.role,l.local_path;
 
--- Failed, interrupted and later attempts remain visible for the same request.
+-- Show attempt history for each request
 SELECT request_id,attempt_id,status,stage,error_code,error_message,started_at,finished_at
 FROM processing_attempts ORDER BY request_id,started_at,attempt_id;
 
--- Historical successes whose artifact currently has no recorded available location.
--- Current disk state still requires a filesystem and checksum check.
+-- Find outputs with no location recorded as available
 SELECT a.attempt_id,o.artifact_id
 FROM processing_attempts a JOIN processing_outputs o ON o.attempt_id=a.attempt_id
 WHERE a.status='succeeded' AND NOT EXISTS
  (SELECT 1 FROM processing_artifact_locations l WHERE l.artifact_id=o.artifact_id AND l.status='available');
 
--- An unresolved attempt can have a receipt and file without a published output.
+-- Show interrupted or running attempts and their outputs
 SELECT a.attempt_id,a.status,a.stage,a.temp_path,a.final_path,a.receipt_json,o.artifact_id
 FROM processing_attempts a LEFT JOIN processing_outputs o ON o.attempt_id=a.attempt_id
 WHERE a.status IN ('running','interrupted') ORDER BY a.started_at;
 
--- Compare source values with the reviewed settings preserved in the request.
+-- Compare source calibration with the reviewed settings
 SELECT i.role, json_extract(p.raster_json,'$.scale') AS source_scale,
  json_extract(p.raster_json,'$.offset') AS source_offset,
  json_extract(r.normalized_json,'$.settings.calibration.' || i.role || '.scale') AS reviewed_scale,
