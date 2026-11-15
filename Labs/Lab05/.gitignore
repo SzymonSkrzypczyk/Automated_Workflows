@@ -6,3 +6,6 @@ reports/
 acquired_c1/
 live_work/
 *.lab05.lock
+
+# Notebook execution snapshots and command logs
+/evidence/

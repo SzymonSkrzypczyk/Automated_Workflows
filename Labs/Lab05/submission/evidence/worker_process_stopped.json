@@ -1,0 +1,24 @@
+{
+  "recorded_at": "2026-11-15T12:09:04.474042Z",
+  "adapter_child_exit_code": 86,
+  "wait_evidence": "case command returned after subprocess.run waited for its worker",
+  "attempts": [
+    {
+      "member_id": "S2A_T34UDA_20250604T094637_L2A-river",
+      "attempt_id": "attempt-d803248917fd4dffbe9f3a2dff75d9fd",
+      "request_id": "request-975e7d61a1b853ea66c1be4ea31e38fab5f1d3a7666afc5b25d1b8491597cbe7",
+      "stage": "before_rename",
+      "temp_path": "E:\\github_repos\\Automated_Workflows\\Labs\\Lab05\\cases\\worker\\outputs\\.attempt-d803248917fd4dffbe9f3a2dff75d9fd.partial.tif",
+      "final_path": "E:\\github_repos\\Automated_Workflows\\Labs\\Lab05\\cases\\worker\\outputs\\attempt-d803248917fd4dffbe9f3a2dff75d9fd.ndvi.tif",
+      "output_links": 0
+    }
+  ],
+  "paths": [
+    {
+      "attempt_id": "attempt-d803248917fd4dffbe9f3a2dff75d9fd",
+      "temporary_exists": true,
+      "final_exists": false,
+      "output_links": 0
+    }
+  ]
+}
