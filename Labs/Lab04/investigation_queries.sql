@@ -20,6 +20,12 @@ JOIN subset_requests s ON s.subset_id=f.subset_id
 JOIN assets asset ON asset.asset_id=s.asset_id
 WHERE o.role='ndvi' ORDER BY o.artifact_id,i.role;
 
+-- Check the input role and its last recorded location status
+SELECT i.request_id, i.role, i.artifact_id, l.local_path, l.status, l.checked_at
+FROM processing_inputs i
+JOIN processing_artifact_locations l ON l.artifact_id=i.artifact_id
+ORDER BY i.request_id,i.role,l.local_path;
+
 -- Failed, interrupted and later attempts remain visible for the same request.
 SELECT request_id,attempt_id,status,stage,error_code,error_message,started_at,finished_at
 FROM processing_attempts ORDER BY request_id,started_at,attempt_id;
