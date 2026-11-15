@@ -1,4 +1,5 @@
 -- Q1: Which expected members have no application attempt?
+-- Params: :batch_id
 -- Shows work that has not started
 SELECT m.member_id, m.planned_request_id, m.request_id
 FROM batch_members AS m
@@ -10,6 +11,7 @@ WHERE m.batch_id = :batch_id
 ORDER BY m.member_id;
 
 -- Q2: Which failed or interrupted requests later produced a verified result?
+-- Params: :batch_id
 -- Shows both attempts for each recovery
 SELECT DISTINCT m.member_id, m.planned_request_id AS request_id,
        old.attempt_id AS earlier_attempt_id, old.status AS earlier_status,
@@ -39,6 +41,7 @@ WHERE m.batch_id = :batch_id
 ORDER BY m.member_id, old.started_at, old.attempt_id;
 
 -- Q3: Which succeeded products have no available location?
+-- Params: :batch_id
 -- Uses recorded location status, which may be out of date
 SELECT DISTINCT m.member_id, a.request_id, a.attempt_id, out.artifact_id,
        (SELECT MAX(l.checked_at) FROM processing_artifact_locations AS l
@@ -54,6 +57,7 @@ WHERE m.batch_id = :batch_id AND a.status = 'succeeded'
 ORDER BY m.member_id, a.attempt_id;
 
 -- Q4: Which members have an old observation or none?
+-- Params: :batch_id, :before (UTC cutoff)
 -- Compares the latest observation with the cutoff
 SELECT m.member_id, o.observation_id, COALESCE(o.state, 'unobserved') AS state,
        o.observed_at, :before AS cutoff_utc
@@ -69,6 +73,7 @@ WHERE m.batch_id = :batch_id
 ORDER BY m.member_id;
 
 -- Q5: Which inputs are blocking a member?
+-- Params: :batch_id
 -- Lists the missing input roles
 SELECT m.member_id, o.state, missing.value AS missing_role, o.observed_at, o.reason
 FROM batch_members AS m
@@ -82,6 +87,7 @@ WHERE m.batch_id = :batch_id AND o.state = 'blocked'
 ORDER BY m.member_id, missing.value;
 
 -- Q6: Which attempts are still running?
+-- Params: :batch_id
 -- Shows their stage and any published outputs
 SELECT m.member_id, a.attempt_id, a.request_id, a.stage, a.temp_path, a.final_path,
        (SELECT COUNT(*) FROM processing_outputs AS out
