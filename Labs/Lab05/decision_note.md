@@ -1,16 +1,24 @@
 # Delivery decision
 
-I would investigate on Saturday. Five outputs are verified and one request is blocked by a missing input. I would check its registered locations, restore a trusted copy with the matching checksum, rerun the batch and verify the result. The blocked request has used no attempt, and I would keep its earlier observation.
+I would investigate on Saturday
+Five outputs are verified and one input is missing
+I would check the registered locations and restore a trusted copy with a matching checksum
+Then rerun the batch and verify the result
+The blocked request has used no attempt, so I would keep its earlier observation
 
-The file checks may be out of date, and cloud and shadow suitability are unassessed. I would describe the outputs as NDVI products with nodata masking, not clear sky vegetation observations.
+The file checks may be out of date
+Cloud and shadow suitability are still unassessed
+I would call these NDVI products with nodata masking
 
-If calibration may be wrong, I would flag the affected products and pause their use. I would check the red and NIR scale and offset against the source metadata and frozen specification. A confirmed correction needs new requests and a new manifest. I would identify the superseded products and keep their history.
+If calibration may be wrong, I would flag the affected products and pause their use
+Then check the red and NIR scale and offset against the source metadata and frozen specification
+A confirmed correction needs new requests and a new manifest
+I would keep the old results and their history
 
 # Proposed report views
 
-These sketches use fields already present in the supplied report. Values below
-describe the missing-input case before recovery. The saved report contains the
-actual IDs and timestamps.
+These sketches show the missing input case before recovery
+The saved report has the actual IDs and timestamps
 
 ```text
 Batch overview
@@ -24,8 +32,8 @@ Cloud suitability: unassessed  Mask policy: nodata_only
 Snapshot: catalogue.sqlite and SHA256
 ```
 
-Counts link to the exact member list. A separate table lists all historical
-attempts, so retries cannot inflate the expected or completed member count.
+The counts link to member lists
+A seperate table shows attempts, so retries do not inflate the result count
 
 ```text
 Member detail
@@ -40,7 +48,6 @@ grid/provenance/catalogue verification flags
 next_check
 ```
 
-For the blocked member, output evidence and an application attempt are absent.
-The detail view must show that absence. Process liveness, cloud/shadow fractions,
-calibration review status, a delivery owner and a measured delivery forecast are
-unavailable fields. A future interface would need new evidence to display them.
+The blocked member has no output evidence or application attempt
+Process liveness, cloud and shadow fractions, calibration review, delivery owner and delivery forecast are unavailable
+These would need more evidence before being shown
