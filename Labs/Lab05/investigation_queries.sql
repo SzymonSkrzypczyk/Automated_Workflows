@@ -1,6 +1,8 @@
 -- Q1: Which expected members have no application attempt?
 -- Params: :batch_id
 -- Shows work that has not started
+-- Empty: all members have an attempt, not necessarily a result
+-- Next: check their states and outputs
 SELECT m.member_id, m.planned_request_id, m.request_id
 FROM batch_members AS m
 WHERE m.batch_id = :batch_id
@@ -13,6 +15,8 @@ ORDER BY m.member_id;
 -- Q2: Which failed or interrupted requests later produced a verified result?
 -- Params: :batch_id
 -- Shows both attempts for each recovery
+-- Empty: no recovery matches the latest recorded evidence
+-- Next: refresh and inspect unresolved attempts
 SELECT DISTINCT m.member_id, m.planned_request_id AS request_id,
        old.attempt_id AS earlier_attempt_id, old.status AS earlier_status,
        produced.attempt_id AS producing_attempt_id, out.artifact_id,
@@ -43,6 +47,8 @@ ORDER BY m.member_id, old.started_at, old.attempt_id;
 -- Q3: Which succeeded products have no available location?
 -- Params: :batch_id
 -- Uses recorded location status, which may be out of date
+-- Empty: every succeeded product has a recorded available location
+-- Next: refresh the location checks
 SELECT DISTINCT m.member_id, a.request_id, a.attempt_id, out.artifact_id,
        (SELECT MAX(l.checked_at) FROM processing_artifact_locations AS l
         WHERE l.artifact_id = out.artifact_id) AS last_location_check
@@ -59,6 +65,8 @@ ORDER BY m.member_id, a.attempt_id;
 -- Q4: Which members have an old observation or none?
 -- Params: :batch_id, :before (UTC cutoff)
 -- Compares the latest observation with the cutoff
+-- Empty: every member has a recent observation
+-- Next: refresh if newer checks are needed
 SELECT m.member_id, o.observation_id, COALESCE(o.state, 'unobserved') AS state,
        o.observed_at, :before AS cutoff_utc
 FROM batch_members AS m
@@ -75,6 +83,8 @@ ORDER BY m.member_id;
 -- Q5: Which inputs are blocking a member?
 -- Params: :batch_id
 -- Lists the missing input roles
+-- Empty: no latest blocked observation lists a missing input
+-- Next: inspect the blocked reason and input locations
 SELECT m.member_id, o.state, missing.value AS missing_role, o.observed_at, o.reason
 FROM batch_members AS m
 JOIN batch_observations AS o USING (batch_id, member_id)
@@ -89,6 +99,8 @@ ORDER BY m.member_id, missing.value;
 -- Q6: Which attempts are still running?
 -- Params: :batch_id
 -- Shows their stage and any published outputs
+-- Empty: no attempts are recorded as running
+-- Next: check process evidence before reconciling
 SELECT m.member_id, a.attempt_id, a.request_id, a.stage, a.temp_path, a.final_path,
        (SELECT COUNT(*) FROM processing_outputs AS out
         WHERE out.attempt_id = a.attempt_id) AS output_links
