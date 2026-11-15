@@ -1,11 +1,4 @@
--- Each query is read-only. Bind :batch_id from batch_plan.load(path)['batch_id'].
--- Timestamps are recorded UTC observations, not promises about the filesystem now.
-
--- Q1. Which expected members have never reached an application attempt?
--- Parameters: :batch_id.
--- Columns: member_id, planned_request_id, request_id (NULL before registration).
--- Empty: every expected request has a non-reused attempt; success is not implied.
--- Next: inspect current states and producing outputs before claiming completion.
+-- Q1: find members that have not started
 SELECT m.member_id, m.planned_request_id, m.request_id
 FROM batch_members AS m
 WHERE m.batch_id = :batch_id
@@ -15,13 +8,7 @@ WHERE m.batch_id = :batch_id
   )
 ORDER BY m.member_id;
 
--- Q2. Which failed/stopped request later produced a currently recorded verified result?
--- Parameters: :batch_id.
--- Columns: member_id, request_id, earlier_attempt_id/status, producing_attempt_id,
---          artifact_id, earlier_started_at, producing_started_at, verified_at.
--- Empty: no recovery meets these conditions in the latest observations.
--- Next: refresh file checks, then inspect attempts and outputs for unresolved cases.
--- "Verified" refers to the latest recorded observation and its adapter evidence.
+-- Q2: find failed or interrupted attempts followed by a verified result
 SELECT DISTINCT m.member_id, m.planned_request_id AS request_id,
        old.attempt_id AS earlier_attempt_id, old.status AS earlier_status,
        produced.attempt_id AS producing_attempt_id, out.artifact_id,
@@ -49,12 +36,7 @@ WHERE m.batch_id = :batch_id
   AND json_extract(o.evidence_json, '$.result.provenance_verified') = 1
 ORDER BY m.member_id, old.started_at, old.attempt_id;
 
--- Q3. Which succeeded products have no location recorded as available?
--- Parameters: :batch_id.
--- Columns: member_id, request_id, attempt_id, artifact_id, last_location_check.
--- Empty: every succeeded NDVI has at least one location marked available.
--- Recorded availability may be stale; this query does not read or hash files.
--- Next: run refresh and inspect location_checks. A missing copy alone is insufficient.
+-- Q3: find products with no available location
 SELECT DISTINCT m.member_id, a.request_id, a.attempt_id, out.artifact_id,
        (SELECT MAX(l.checked_at) FROM processing_artifact_locations AS l
         WHERE l.artifact_id = out.artifact_id) AS last_location_check
@@ -68,13 +50,7 @@ WHERE m.batch_id = :batch_id AND a.status = 'succeeded'
   )
 ORDER BY m.member_id, a.attempt_id;
 
--- Q4. Which members have an old latest observation, or none?
--- Parameters: :batch_id and :before, an explicit ISO 8601 UTC cutoff.
--- Columns: member_id, observation_id, state, observed_at, cutoff_utc.
--- Empty: every member has an observation at or after :before.
--- Next: run refresh; export a new report if current file evidence is needed.
--- observed_at is the batch observation time. Location checked_at and result
--- checked_at are separate verification times; generated_at is only report export.
+-- Q4: find old or missing observations
 SELECT m.member_id, o.observation_id, COALESCE(o.state, 'unobserved') AS state,
        o.observed_at, :before AS cutoff_utc
 FROM batch_members AS m
@@ -88,12 +64,7 @@ WHERE m.batch_id = :batch_id
   AND (o.observation_id IS NULL OR julianday(o.observed_at) < julianday(:before))
 ORDER BY m.member_id;
 
--- Q5. Which exact input role blocks a member in its latest observation?
--- Parameters: :batch_id.
--- Columns: member_id, state, missing_role, observed_at, reason.
--- Empty: no latest blocked observation lists a missing input. Global active work
--- can also block a member; inspect reason before inferring all inputs are usable.
--- Next: inspect artifact locations for that role, restore bytes, then run again.
+-- Q5: find inputs blocking a member
 SELECT m.member_id, o.state, missing.value AS missing_role, o.observed_at, o.reason
 FROM batch_members AS m
 JOIN batch_observations AS o USING (batch_id, member_id)
@@ -105,11 +76,7 @@ WHERE m.batch_id = :batch_id AND o.state = 'blocked'
   )
 ORDER BY m.member_id, missing.value;
 
--- Q6. Which attempts remain running, and have they published any catalogue output?
--- Parameters: :batch_id.
--- Columns: member_id, attempt_id, request_id, stage, temp_path, final_path, output_links.
--- Empty: no member request is recorded running; this does not prove host liveness.
--- Next: inspect paths and process/scheduler evidence; reconcile only after proving stop.
+-- Q6: find running attempts and their outputs
 SELECT m.member_id, a.attempt_id, a.request_id, a.stage, a.temp_path, a.final_path,
        (SELECT COUNT(*) FROM processing_outputs AS out
         WHERE out.attempt_id = a.attempt_id) AS output_links
