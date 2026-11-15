@@ -1,25 +1,10 @@
 # Delivery decision
 
-On Saturday morning, five members have verified outputs and one is blocked by
-a missing input. Delivery is due Monday afternoon. I would investigate now.
+I would investigate on Saturday. Five outputs are verified and one request is blocked by a missing input. I would check its registered locations, restore a trusted copy with the matching checksum, rerun the batch and verify the result. The blocked request has used no attempt, and I would keep its earlier observation.
 
-I would identify the blocked member, input role and registered locations, then
-check a trusted alternate copy or the preserved fixture. If its size and SHA256
-match, I would restore it and rerun the same manifest. The missing input has not
-consumed an application attempt. I would verify the new output, export a new
-report, and retain the blocked observation and recovery history.
+The file checks may be out of date, and cloud and shadow suitability are unassessed. I would describe the outputs as NDVI products with nodata masking, not clear sky vegetation observations.
 
-The existing outputs were verified at their recorded times. Current availability
-needs fresh checks. Cloud and shadow suitability remain unassessed, so I would
-describe these as delivered NDVI products with nodata masking. Calling them
-clear sky vegetation observations requires additional scientific QC.
-
-If calibration may be wrong in published products, I would flag the affected
-requests immediately and pause their use. I would compare the red/NIR scale and
-offset with preserved source metadata and the frozen processing specification.
-A confirmed calibration correction changes the scientific identity: create new
-requests and a new manifest, publish corrected products, and document which
-earlier products they supersede. Keep the original outputs and attempt history.
+If calibration may be wrong, I would flag the affected products and pause their use. I would check the red and NIR scale and offset against the source metadata and frozen specification. A confirmed correction needs new requests and a new manifest. I would identify the superseded products and keep their history.
 
 # Proposed report views
 
