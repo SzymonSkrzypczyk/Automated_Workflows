@@ -28,7 +28,7 @@ runtime test. No GPU or cluster is needed.
 
 The wrapper, publication and reconciliation code are supplied. Most coding effort
 goes into database design and three short logical repairs. Read
-`CALIBRATION_REVIEW.md` before computing this particular sample: its original
+`NDVI_Visual_Investigation_v1_20261022_Student/CALIBRATION_REVIEW.md` before computing this particular sample: its original
 offset metadata conflict, and the explicit interpretation is part of the request.
 
 Approximate pace: 120 minutes in class, then 45–60 minutes to finish the second
