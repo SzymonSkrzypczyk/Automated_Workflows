@@ -1,0 +1,91 @@
+{
+  "captured_at": "2026-11-15T12:10:10.838016Z",
+  "batch_id": "batch-9d9e55cdade3bd73facf5f5b21c3c360b7cdb4f5afaf473a011ac673088465cb",
+  "summary": {
+    "expected": 6,
+    "counts": {
+      "ready": 0,
+      "complete": 6,
+      "blocked": 0,
+      "unresolved": 0,
+      "failed": 0,
+      "unobserved": 0
+    },
+    "members": {
+      "ready": [],
+      "complete": [
+        "S2A_T34UDA_20250604T094637_L2A-east",
+        "S2A_T34UDA_20250604T094637_L2A-river",
+        "S2B_T34UDA_20250610T095316_L2A-east",
+        "S2B_T34UDA_20250610T095316_L2A-river",
+        "S2C_T34UDA_20250605T095638_L2A-east",
+        "S2C_T34UDA_20250605T095638_L2A-river"
+      ],
+      "blocked": [],
+      "unresolved": [],
+      "failed": [],
+      "unobserved": []
+    }
+  },
+  "no_attempts": [],
+  "recovered_requests": [],
+  "unavailable_products": [],
+  "missing_roles": [],
+  "running": [],
+  "attempts": [
+    {
+      "request_id": "request-975e7d61a1b853ea66c1be4ea31e38fab5f1d3a7666afc5b25d1b8491597cbe7",
+      "attempt_id": "attempt-e5e8e38ace8c4a5398394176dda4a2e1",
+      "status": "succeeded",
+      "stage": "complete",
+      "started_at": "2026-11-15T12:10:05.265124Z",
+      "finished_at": "2026-11-15T12:10:05.324489Z",
+      "error_code": null
+    },
+    {
+      "request_id": "request-ce9a8f522e8379892ffa2d4b99ced7efb7cbe46fa0e2e03f8df0b7f0be17e11d",
+      "attempt_id": "attempt-c49d69bd01bb49928850a1da0aab4683",
+      "status": "succeeded",
+      "stage": "complete",
+      "started_at": "2026-11-15T12:10:06.149609Z",
+      "finished_at": "2026-11-15T12:10:06.205259Z",
+      "error_code": null
+    },
+    {
+      "request_id": "request-41a164ca708494c758efd032de682a50f4fba8d540ccbe97aa5421b151ab4124",
+      "attempt_id": "attempt-5ff18e475bba4c08aebc3822dc4759d3",
+      "status": "succeeded",
+      "stage": "complete",
+      "started_at": "2026-11-15T12:10:07.056307Z",
+      "finished_at": "2026-11-15T12:10:07.112582Z",
+      "error_code": null
+    },
+    {
+      "request_id": "request-e72cb532719a7945d56b51d8db1dcbc9284f47f9c251c591c92d4d293566bf04",
+      "attempt_id": "attempt-65326d0feb7040d0b91b69ca07320879",
+      "status": "succeeded",
+      "stage": "complete",
+      "started_at": "2026-11-15T12:10:07.948625Z",
+      "finished_at": "2026-11-15T12:10:08.004054Z",
+      "error_code": null
+    },
+    {
+      "request_id": "request-a82e11cbe2e3f3e78b0a04fb19c49dfeda12f64c74f4b28ffdfea8fbdd91771a",
+      "attempt_id": "attempt-21482608f5604ed6997f2c81f5842d9a",
+      "status": "succeeded",
+      "stage": "complete",
+      "started_at": "2026-11-15T12:10:08.834859Z",
+      "finished_at": "2026-11-15T12:10:08.891729Z",
+      "error_code": null
+    },
+    {
+      "request_id": "request-88e491de4a9e6093e25147b22fb03548ae8cd023a28b319bc5c63e7761b8c347",
+      "attempt_id": "attempt-f134c1f7453a4cdc9873773114a6f1be",
+      "status": "succeeded",
+      "stage": "complete",
+      "started_at": "2026-11-15T12:10:09.735611Z",
+      "finished_at": "2026-11-15T12:10:09.793904Z",
+      "error_code": null
+    }
+  ]
+}

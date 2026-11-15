@@ -1,0 +1,12 @@
+{
+  "original_request": "request-975e7d61a1b853ea66c1be4ea31e38fab5f1d3a7666afc5b25d1b8491597cbe7",
+  "storage_request": "request-975e7d61a1b853ea66c1be4ea31e38fab5f1d3a7666afc5b25d1b8491597cbe7",
+  "changed_science_request": "request-8ab2595b49b2a78867d5ff9bf41abfe1be106329512f252caa9902aa4e5f89b3",
+  "changed_setting": {
+    "min_valid_fraction": {
+      "before": 0.1,
+      "after": 0.2
+    }
+  },
+  "changed_request_executed": false
+}
