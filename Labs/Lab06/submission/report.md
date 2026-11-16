@@ -21,7 +21,7 @@ For 5 June, raising the water threshold from 0 to 0.15 reduced candidate water a
 
 At a minimum valid fraction of 0.5, assessment IDs 1–6 rejected both 4 June requests and accepted the other four. At 0.995, IDs 9–14 rejected all six, including the 5 June river attempt whose valid fraction was 0.99396. The reassessment started zero attempts and left the earlier executions succeeded: execution status records whether processing completed, while QC records whether its result meets a policy
 
-The query in `investigation.sql` lists each attempt with its assessments. For `attempt-f94fa31d2daa46ada155827b1d85f540`, assessment 3 accepted the result at 0.5 and assessment 11 rejected it at 0.995. The MNDWI attempts each have the named outputs `index` and `water`, plus the shared `valid_mask`. Changing a QC threshold uses already measured coverage, while changing the cloud mask changes which observations enter the calculation and therefore needs a new request
+The query in `investigation.sql` lists each attempt with its assessments. For `attempt-f94fa31d2daa46ada155827b1d85f540`, assessment 3 accepted the result at 0.5 and assessment 11 rejected it at 0.995. The saved `evidence/common/assessments.json` contains both assessments and their policies. The MNDWI attempts each have the named outputs `index` and `water`, plus the shared `valid_mask`. Changing a QC threshold uses already measured coverage, while changing the cloud mask changes which observations enter the calculation and therefore needs a new request
 
 ## Personal product
 
