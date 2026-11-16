@@ -1,0 +1,943 @@
+{
+  "batch_id": "batch-cdad9da09312ed93ae11e6353e8b33e286e7153bf5cd9595b4823208e77a97a9",
+  "generated_at": "2026-11-16T09:05:00.295610Z",
+  "members": [
+    {
+      "member_id": "S2A_T34UDA_20250604T094637_L2A-river-mndwi",
+      "request_id": "request-fd831738074154297833b483f3f7b18ec72f73639d95ecee6ca9a23a36390eb2",
+      "state": "complete",
+      "reason": "All declared outputs were verified against the producing attempt",
+      "attempts_used": 1,
+      "attempts": [
+        {
+          "attempt_id": "attempt-aafe59bad94446d2b2abc046439daf78",
+          "status": "succeeded",
+          "stage": "complete",
+          "error_code": null,
+          "error_message": null,
+          "log_path": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\logs\\attempt-aafe59bad94446d2b2abc046439daf78.jsonl"
+        }
+      ],
+      "result": {
+        "attempt_id": "attempt-aafe59bad94446d2b2abc046439daf78",
+        "paths": {
+          "index": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-aafe59bad94446d2b2abc046439daf78\\index.tif",
+          "valid_mask": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-aafe59bad94446d2b2abc046439daf78\\valid_mask.tif",
+          "water": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-aafe59bad94446d2b2abc046439daf78\\water.tif"
+        },
+        "receipt": {
+          "attempt_id": "attempt-aafe59bad94446d2b2abc046439daf78",
+          "contract": "optical-product-v1",
+          "grid": {
+            "aoi_bbox": [
+              19.91,
+              50.04,
+              19.94,
+              50.06
+            ],
+            "crs": "EPSG:32634",
+            "shape": [
+              114,
+              110
+            ],
+            "transform": [
+              20,
+              0,
+              421940,
+              0,
+              -20,
+              5545880
+            ]
+          },
+          "layers": {
+            "index": {
+              "filename": "index.tif",
+              "sha256": "df091645e21b4993a3063a9bda72dcf17aa58dcc79b86103552d86763cb28514",
+              "size_bytes": 21891
+            },
+            "valid_mask": {
+              "filename": "valid_mask.tif",
+              "sha256": "49e10fde6a89c928c2f02c2d7ed542248ccca76853b0940fa51e9fcf17b885ce",
+              "size_bytes": 1878
+            },
+            "water": {
+              "filename": "water.tif",
+              "sha256": "3721a75f1a0e046f655e2cee7e0de0f0b7c8bbe605d414c4755ed9bf2f95853a",
+              "size_bytes": 2003
+            }
+          },
+          "metrics": {
+            "aoi_pixels": 11926,
+            "area_convention": "projected UTM grid area; pixel centers inside AOI",
+            "clear_input_fraction": 0.4760187824920342,
+            "clear_input_pixels": 5677,
+            "cloud_screened": true,
+            "denominator_or_product_rejected_pixels": 0,
+            "excluded_scl": [
+              0,
+              1,
+              2,
+              3,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "grid_pixels": 12540,
+            "mask_policy": "scl",
+            "maximum": 0.496636301279068,
+            "mean": -0.29763031005859375,
+            "minimum": -0.6193728446960449,
+            "outside_nominal_range": 0,
+            "pixel_area_m2": 400.0,
+            "product_metrics": {
+              "candidate_water_area_m2": 130000.0,
+              "candidate_water_pixels": 325,
+              "observed_area_m2": 2270800.0,
+              "threshold": 0.0
+            },
+            "raw_valid_fraction": 1.0,
+            "raw_valid_pixels": 11926,
+            "reflectance_resampling": "average; require >=0.999 valid source fraction",
+            "scl_counts_in_aoi": {
+              "0": 0,
+              "1": 0,
+              "10": 5819,
+              "11": 0,
+              "2": 68,
+              "3": 273,
+              "4": 2630,
+              "5": 2736,
+              "6": 311,
+              "7": 0,
+              "8": 78,
+              "9": 11
+            },
+            "scl_resampling": "nearest",
+            "valid_fraction": 0.4760187824920342,
+            "valid_pixels": 5677
+          },
+          "request_id": "request-fd831738074154297833b483f3f7b18ec72f73639d95ecee6ca9a23a36390eb2"
+        },
+        "checked_at": "2026-11-16T09:05:00.248597Z"
+      },
+      "rejected_results": [],
+      "product": "mndwi",
+      "grid": {
+        "crs": "EPSG:32634",
+        "transform": [
+          20,
+          0,
+          421940,
+          0,
+          -20,
+          5545880
+        ],
+        "shape": [
+          114,
+          110
+        ],
+        "aoi_bbox": [
+          19.91,
+          50.04,
+          19.94,
+          50.06
+        ]
+      },
+      "qc": {
+        "assessment_id": 1,
+        "request_id": "request-fd831738074154297833b483f3f7b18ec72f73639d95ecee6ca9a23a36390eb2",
+        "attempt_id": "attempt-aafe59bad94446d2b2abc046439daf78",
+        "assessed_at": "2026-11-16T09:04:49.760599Z",
+        "policy_version": "coverage-range-v1",
+        "policy_json": "{\"minimum_valid_fraction\":0.5,\"outside_nominal_fraction_review\":0.02,\"require_cloud_screening\":true}",
+        "outcome": "rejected",
+        "reason": "Usable observation fraction below this assessment policy",
+        "metrics_json": "{\"aoi_pixels\":11926,\"area_convention\":\"projected UTM grid area; pixel centers inside AOI\",\"clear_input_fraction\":0.4760187824920342,\"clear_input_pixels\":5677,\"cloud_screened\":true,\"denominator_or_product_rejected_pixels\":0,\"excluded_scl\":[0,1,2,3,7,8,9,10,11],\"grid_pixels\":12540,\"mask_policy\":\"scl\",\"maximum\":0.496636301279068,\"mean\":-0.29763031005859375,\"minimum\":-0.6193728446960449,\"outside_nominal_range\":0,\"pixel_area_m2\":400.0,\"product_metrics\":{\"candidate_water_area_m2\":130000.0,\"candidate_water_pixels\":325,\"observed_area_m2\":2270800.0,\"threshold\":0.0},\"raw_valid_fraction\":1.0,\"raw_valid_pixels\":11926,\"reflectance_resampling\":\"average; require >=0.999 valid source fraction\",\"scl_counts_in_aoi\":{\"0\":0,\"1\":0,\"10\":5819,\"11\":0,\"2\":68,\"3\":273,\"4\":2630,\"5\":2736,\"6\":311,\"7\":0,\"8\":78,\"9\":11},\"scl_resampling\":\"nearest\",\"valid_fraction\":0.4760187824920342,\"valid_pixels\":5677}"
+      }
+    },
+    {
+      "member_id": "S2A_T34UDA_20250604T094637_L2A-east-mndwi",
+      "request_id": "request-fc4857030f468f31df0fa25225e60fab8df2b4a8f17e3a7af05fc7a2b86cf8be",
+      "state": "complete",
+      "reason": "All declared outputs were verified against the producing attempt",
+      "attempts_used": 1,
+      "attempts": [
+        {
+          "attempt_id": "attempt-4198b232bcc1408b890557a5381761a5",
+          "status": "succeeded",
+          "stage": "complete",
+          "error_code": null,
+          "error_message": null,
+          "log_path": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\logs\\attempt-4198b232bcc1408b890557a5381761a5.jsonl"
+        }
+      ],
+      "result": {
+        "attempt_id": "attempt-4198b232bcc1408b890557a5381761a5",
+        "paths": {
+          "index": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-4198b232bcc1408b890557a5381761a5\\index.tif",
+          "valid_mask": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-4198b232bcc1408b890557a5381761a5\\valid_mask.tif",
+          "water": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-4198b232bcc1408b890557a5381761a5\\water.tif"
+        },
+        "receipt": {
+          "attempt_id": "attempt-4198b232bcc1408b890557a5381761a5",
+          "contract": "optical-product-v1",
+          "grid": {
+            "aoi_bbox": [
+              19.94,
+              50.04,
+              19.97,
+              50.06
+            ],
+            "crs": "EPSG:32634",
+            "shape": [
+              113,
+              110
+            ],
+            "transform": [
+              20,
+              0,
+              424080,
+              0,
+              -20,
+              5545840
+            ]
+          },
+          "layers": {
+            "index": {
+              "filename": "index.tif",
+              "sha256": "828c95c36d48a6df6e486585a74a978220ef38d3ba9dfb5a6593a708eb00d2f4",
+              "size_bytes": 22601
+            },
+            "valid_mask": {
+              "filename": "valid_mask.tif",
+              "sha256": "4cd089fe432dab045ef1f1c0fbc13b21c4ab218502890639a6ee534bc7b873fb",
+              "size_bytes": 2096
+            },
+            "water": {
+              "filename": "water.tif",
+              "sha256": "8de46b444eda4a5a02d209cdd34f2d030d6c7d57734b58968a77a6e9efe45627",
+              "size_bytes": 2225
+            }
+          },
+          "metrics": {
+            "aoi_pixels": 11954,
+            "area_convention": "projected UTM grid area; pixel centers inside AOI",
+            "clear_input_fraction": 0.4853605487702861,
+            "clear_input_pixels": 5802,
+            "cloud_screened": true,
+            "denominator_or_product_rejected_pixels": 0,
+            "excluded_scl": [
+              0,
+              1,
+              2,
+              3,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "grid_pixels": 12430,
+            "mask_policy": "scl",
+            "maximum": 0.40915030241012573,
+            "mean": -0.28520849347114563,
+            "minimum": -0.6807871460914612,
+            "outside_nominal_range": 0,
+            "pixel_area_m2": 400.0,
+            "product_metrics": {
+              "candidate_water_area_m2": 87200.0,
+              "candidate_water_pixels": 218,
+              "observed_area_m2": 2320800.0,
+              "threshold": 0.0
+            },
+            "raw_valid_fraction": 1.0,
+            "raw_valid_pixels": 11954,
+            "reflectance_resampling": "average; require >=0.999 valid source fraction",
+            "scl_counts_in_aoi": {
+              "0": 0,
+              "1": 0,
+              "10": 5643,
+              "11": 0,
+              "2": 4,
+              "3": 297,
+              "4": 1948,
+              "5": 3531,
+              "6": 323,
+              "7": 5,
+              "8": 180,
+              "9": 23
+            },
+            "scl_resampling": "nearest",
+            "valid_fraction": 0.4853605487702861,
+            "valid_pixels": 5802
+          },
+          "request_id": "request-fc4857030f468f31df0fa25225e60fab8df2b4a8f17e3a7af05fc7a2b86cf8be"
+        },
+        "checked_at": "2026-11-16T09:05:00.264287Z"
+      },
+      "rejected_results": [],
+      "product": "mndwi",
+      "grid": {
+        "crs": "EPSG:32634",
+        "transform": [
+          20,
+          0,
+          424080,
+          0,
+          -20,
+          5545840
+        ],
+        "shape": [
+          113,
+          110
+        ],
+        "aoi_bbox": [
+          19.94,
+          50.04,
+          19.97,
+          50.06
+        ]
+      },
+      "qc": {
+        "assessment_id": 2,
+        "request_id": "request-fc4857030f468f31df0fa25225e60fab8df2b4a8f17e3a7af05fc7a2b86cf8be",
+        "attempt_id": "attempt-4198b232bcc1408b890557a5381761a5",
+        "assessed_at": "2026-11-16T09:04:49.772570Z",
+        "policy_version": "coverage-range-v1",
+        "policy_json": "{\"minimum_valid_fraction\":0.5,\"outside_nominal_fraction_review\":0.02,\"require_cloud_screening\":true}",
+        "outcome": "rejected",
+        "reason": "Usable observation fraction below this assessment policy",
+        "metrics_json": "{\"aoi_pixels\":11954,\"area_convention\":\"projected UTM grid area; pixel centers inside AOI\",\"clear_input_fraction\":0.4853605487702861,\"clear_input_pixels\":5802,\"cloud_screened\":true,\"denominator_or_product_rejected_pixels\":0,\"excluded_scl\":[0,1,2,3,7,8,9,10,11],\"grid_pixels\":12430,\"mask_policy\":\"scl\",\"maximum\":0.40915030241012573,\"mean\":-0.28520849347114563,\"minimum\":-0.6807871460914612,\"outside_nominal_range\":0,\"pixel_area_m2\":400.0,\"product_metrics\":{\"candidate_water_area_m2\":87200.0,\"candidate_water_pixels\":218,\"observed_area_m2\":2320800.0,\"threshold\":0.0},\"raw_valid_fraction\":1.0,\"raw_valid_pixels\":11954,\"reflectance_resampling\":\"average; require >=0.999 valid source fraction\",\"scl_counts_in_aoi\":{\"0\":0,\"1\":0,\"10\":5643,\"11\":0,\"2\":4,\"3\":297,\"4\":1948,\"5\":3531,\"6\":323,\"7\":5,\"8\":180,\"9\":23},\"scl_resampling\":\"nearest\",\"valid_fraction\":0.4853605487702861,\"valid_pixels\":5802}"
+      }
+    },
+    {
+      "member_id": "S2C_T34UDA_20250605T095638_L2A-river-mndwi",
+      "request_id": "request-56d8ebdf43a126b38221700ef2c3749f112f0c267f76801ef467544155ed79f7",
+      "state": "complete",
+      "reason": "All declared outputs were verified against the producing attempt",
+      "attempts_used": 1,
+      "attempts": [
+        {
+          "attempt_id": "attempt-f94fa31d2daa46ada155827b1d85f540",
+          "status": "succeeded",
+          "stage": "complete",
+          "error_code": null,
+          "error_message": null,
+          "log_path": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\logs\\attempt-f94fa31d2daa46ada155827b1d85f540.jsonl"
+        }
+      ],
+      "result": {
+        "attempt_id": "attempt-f94fa31d2daa46ada155827b1d85f540",
+        "paths": {
+          "index": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-f94fa31d2daa46ada155827b1d85f540\\index.tif",
+          "valid_mask": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-f94fa31d2daa46ada155827b1d85f540\\valid_mask.tif",
+          "water": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-f94fa31d2daa46ada155827b1d85f540\\water.tif"
+        },
+        "receipt": {
+          "attempt_id": "attempt-f94fa31d2daa46ada155827b1d85f540",
+          "contract": "optical-product-v1",
+          "grid": {
+            "aoi_bbox": [
+              19.91,
+              50.04,
+              19.94,
+              50.06
+            ],
+            "crs": "EPSG:32634",
+            "shape": [
+              114,
+              110
+            ],
+            "transform": [
+              20,
+              0,
+              421940,
+              0,
+              -20,
+              5545880
+            ]
+          },
+          "layers": {
+            "index": {
+              "filename": "index.tif",
+              "sha256": "451c1d6d549f33318775b2ae829dd174a6b4e64e601dcbece7f08ec93acf0130",
+              "size_bytes": 43441
+            },
+            "valid_mask": {
+              "filename": "valid_mask.tif",
+              "sha256": "779bcfb25b3354375ab9ecd691be6beecc2d656daa884e9b14dc6032bd67d249",
+              "size_bytes": 1616
+            },
+            "water": {
+              "filename": "water.tif",
+              "sha256": "eef9e59db23a0ac631a42ccfeef808c1ba054f0d6e51ff6f3e558837075d0ecb",
+              "size_bytes": 1901
+            }
+          },
+          "metrics": {
+            "aoi_pixels": 11926,
+            "area_convention": "projected UTM grid area; pixel centers inside AOI",
+            "clear_input_fraction": 0.9939627704175751,
+            "clear_input_pixels": 11854,
+            "cloud_screened": true,
+            "denominator_or_product_rejected_pixels": 0,
+            "excluded_scl": [
+              0,
+              1,
+              2,
+              3,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "grid_pixels": 12540,
+            "mask_policy": "scl",
+            "maximum": 0.4657980501651764,
+            "mean": -0.3419964611530304,
+            "minimum": -0.6638950705528259,
+            "outside_nominal_range": 0,
+            "pixel_area_m2": 400.0,
+            "product_metrics": {
+              "candidate_water_area_m2": 231200.0,
+              "candidate_water_pixels": 578,
+              "observed_area_m2": 4741600.0,
+              "threshold": 0.0
+            },
+            "raw_valid_fraction": 1.0,
+            "raw_valid_pixels": 11926,
+            "reflectance_resampling": "average; require >=0.999 valid source fraction",
+            "scl_counts_in_aoi": {
+              "0": 0,
+              "1": 0,
+              "10": 0,
+              "11": 0,
+              "2": 72,
+              "3": 0,
+              "4": 6630,
+              "5": 4663,
+              "6": 561,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            },
+            "scl_resampling": "nearest",
+            "valid_fraction": 0.9939627704175751,
+            "valid_pixels": 11854
+          },
+          "request_id": "request-56d8ebdf43a126b38221700ef2c3749f112f0c267f76801ef467544155ed79f7"
+        },
+        "checked_at": "2026-11-16T09:05:00.264287Z"
+      },
+      "rejected_results": [],
+      "product": "mndwi",
+      "grid": {
+        "crs": "EPSG:32634",
+        "transform": [
+          20,
+          0,
+          421940,
+          0,
+          -20,
+          5545880
+        ],
+        "shape": [
+          114,
+          110
+        ],
+        "aoi_bbox": [
+          19.91,
+          50.04,
+          19.94,
+          50.06
+        ]
+      },
+      "qc": {
+        "assessment_id": 3,
+        "request_id": "request-56d8ebdf43a126b38221700ef2c3749f112f0c267f76801ef467544155ed79f7",
+        "attempt_id": "attempt-f94fa31d2daa46ada155827b1d85f540",
+        "assessed_at": "2026-11-16T09:04:49.772570Z",
+        "policy_version": "coverage-range-v1",
+        "policy_json": "{\"minimum_valid_fraction\":0.5,\"outside_nominal_fraction_review\":0.02,\"require_cloud_screening\":true}",
+        "outcome": "accepted",
+        "reason": "Meets the recorded automatic coverage and range checks; visual/scientific interpretation still required",
+        "metrics_json": "{\"aoi_pixels\":11926,\"area_convention\":\"projected UTM grid area; pixel centers inside AOI\",\"clear_input_fraction\":0.9939627704175751,\"clear_input_pixels\":11854,\"cloud_screened\":true,\"denominator_or_product_rejected_pixels\":0,\"excluded_scl\":[0,1,2,3,7,8,9,10,11],\"grid_pixels\":12540,\"mask_policy\":\"scl\",\"maximum\":0.4657980501651764,\"mean\":-0.3419964611530304,\"minimum\":-0.6638950705528259,\"outside_nominal_range\":0,\"pixel_area_m2\":400.0,\"product_metrics\":{\"candidate_water_area_m2\":231200.0,\"candidate_water_pixels\":578,\"observed_area_m2\":4741600.0,\"threshold\":0.0},\"raw_valid_fraction\":1.0,\"raw_valid_pixels\":11926,\"reflectance_resampling\":\"average; require >=0.999 valid source fraction\",\"scl_counts_in_aoi\":{\"0\":0,\"1\":0,\"10\":0,\"11\":0,\"2\":72,\"3\":0,\"4\":6630,\"5\":4663,\"6\":561,\"7\":0,\"8\":0,\"9\":0},\"scl_resampling\":\"nearest\",\"valid_fraction\":0.9939627704175751,\"valid_pixels\":11854}"
+      }
+    },
+    {
+      "member_id": "S2C_T34UDA_20250605T095638_L2A-east-mndwi",
+      "request_id": "request-0d7106a762817b079a29514e5cab85587df5d230adb446b43be37bcfea61ba1c",
+      "state": "complete",
+      "reason": "All declared outputs were verified against the producing attempt",
+      "attempts_used": 1,
+      "attempts": [
+        {
+          "attempt_id": "attempt-bc463a8a4f1b41bc957bf597b1bbcfa2",
+          "status": "succeeded",
+          "stage": "complete",
+          "error_code": null,
+          "error_message": null,
+          "log_path": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\logs\\attempt-bc463a8a4f1b41bc957bf597b1bbcfa2.jsonl"
+        }
+      ],
+      "result": {
+        "attempt_id": "attempt-bc463a8a4f1b41bc957bf597b1bbcfa2",
+        "paths": {
+          "index": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-bc463a8a4f1b41bc957bf597b1bbcfa2\\index.tif",
+          "valid_mask": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-bc463a8a4f1b41bc957bf597b1bbcfa2\\valid_mask.tif",
+          "water": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-bc463a8a4f1b41bc957bf597b1bbcfa2\\water.tif"
+        },
+        "receipt": {
+          "attempt_id": "attempt-bc463a8a4f1b41bc957bf597b1bbcfa2",
+          "contract": "optical-product-v1",
+          "grid": {
+            "aoi_bbox": [
+              19.94,
+              50.04,
+              19.97,
+              50.06
+            ],
+            "crs": "EPSG:32634",
+            "shape": [
+              113,
+              110
+            ],
+            "transform": [
+              20,
+              0,
+              424080,
+              0,
+              -20,
+              5545840
+            ]
+          },
+          "layers": {
+            "index": {
+              "filename": "index.tif",
+              "sha256": "4267c45e18ffe6eb4c64912f67a41a01441766c9bf80670c55876b97066e95f2",
+              "size_bytes": 43589
+            },
+            "valid_mask": {
+              "filename": "valid_mask.tif",
+              "sha256": "5c44fc062e47b819b2a33be6424d14911014792d293c524a74be309dd81e9050",
+              "size_bytes": 1674
+            },
+            "water": {
+              "filename": "water.tif",
+              "sha256": "47d2cd760bf59ee45d068e84a3bcef2bee13fad6481dbfc59c4fa63cceb52082",
+              "size_bytes": 1999
+            }
+          },
+          "metrics": {
+            "aoi_pixels": 11954,
+            "area_convention": "projected UTM grid area; pixel centers inside AOI",
+            "clear_input_fraction": 0.9915509452902794,
+            "clear_input_pixels": 11853,
+            "cloud_screened": true,
+            "denominator_or_product_rejected_pixels": 0,
+            "excluded_scl": [
+              0,
+              1,
+              2,
+              3,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "grid_pixels": 12430,
+            "mask_policy": "scl",
+            "maximum": 0.44928598403930664,
+            "mean": -0.3064683973789215,
+            "minimum": -0.6804159283638,
+            "outside_nominal_range": 0,
+            "pixel_area_m2": 400.0,
+            "product_metrics": {
+              "candidate_water_area_m2": 233600.0,
+              "candidate_water_pixels": 584,
+              "observed_area_m2": 4741200.0,
+              "threshold": 0.0
+            },
+            "raw_valid_fraction": 1.0,
+            "raw_valid_pixels": 11954,
+            "reflectance_resampling": "average; require >=0.999 valid source fraction",
+            "scl_counts_in_aoi": {
+              "0": 0,
+              "1": 0,
+              "10": 0,
+              "11": 0,
+              "2": 101,
+              "3": 0,
+              "4": 4198,
+              "5": 7081,
+              "6": 574,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            },
+            "scl_resampling": "nearest",
+            "valid_fraction": 0.9915509452902794,
+            "valid_pixels": 11853
+          },
+          "request_id": "request-0d7106a762817b079a29514e5cab85587df5d230adb446b43be37bcfea61ba1c"
+        },
+        "checked_at": "2026-11-16T09:05:00.279954Z"
+      },
+      "rejected_results": [],
+      "product": "mndwi",
+      "grid": {
+        "crs": "EPSG:32634",
+        "transform": [
+          20,
+          0,
+          424080,
+          0,
+          -20,
+          5545840
+        ],
+        "shape": [
+          113,
+          110
+        ],
+        "aoi_bbox": [
+          19.94,
+          50.04,
+          19.97,
+          50.06
+        ]
+      },
+      "qc": {
+        "assessment_id": 4,
+        "request_id": "request-0d7106a762817b079a29514e5cab85587df5d230adb446b43be37bcfea61ba1c",
+        "attempt_id": "attempt-bc463a8a4f1b41bc957bf597b1bbcfa2",
+        "assessed_at": "2026-11-16T09:04:49.796447Z",
+        "policy_version": "coverage-range-v1",
+        "policy_json": "{\"minimum_valid_fraction\":0.5,\"outside_nominal_fraction_review\":0.02,\"require_cloud_screening\":true}",
+        "outcome": "accepted",
+        "reason": "Meets the recorded automatic coverage and range checks; visual/scientific interpretation still required",
+        "metrics_json": "{\"aoi_pixels\":11954,\"area_convention\":\"projected UTM grid area; pixel centers inside AOI\",\"clear_input_fraction\":0.9915509452902794,\"clear_input_pixels\":11853,\"cloud_screened\":true,\"denominator_or_product_rejected_pixels\":0,\"excluded_scl\":[0,1,2,3,7,8,9,10,11],\"grid_pixels\":12430,\"mask_policy\":\"scl\",\"maximum\":0.44928598403930664,\"mean\":-0.3064683973789215,\"minimum\":-0.6804159283638,\"outside_nominal_range\":0,\"pixel_area_m2\":400.0,\"product_metrics\":{\"candidate_water_area_m2\":233600.0,\"candidate_water_pixels\":584,\"observed_area_m2\":4741200.0,\"threshold\":0.0},\"raw_valid_fraction\":1.0,\"raw_valid_pixels\":11954,\"reflectance_resampling\":\"average; require >=0.999 valid source fraction\",\"scl_counts_in_aoi\":{\"0\":0,\"1\":0,\"10\":0,\"11\":0,\"2\":101,\"3\":0,\"4\":4198,\"5\":7081,\"6\":574,\"7\":0,\"8\":0,\"9\":0},\"scl_resampling\":\"nearest\",\"valid_fraction\":0.9915509452902794,\"valid_pixels\":11853}"
+      }
+    },
+    {
+      "member_id": "S2B_T34UDA_20250610T095316_L2A-river-mndwi",
+      "request_id": "request-7d4fae878961b063de28e285255d12dad9ed2c045f45f1dae204632d1d1bcf7e",
+      "state": "complete",
+      "reason": "All declared outputs were verified against the producing attempt",
+      "attempts_used": 1,
+      "attempts": [
+        {
+          "attempt_id": "attempt-93dff42079cf4d439118bae1b2c6b60e",
+          "status": "succeeded",
+          "stage": "complete",
+          "error_code": null,
+          "error_message": null,
+          "log_path": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\logs\\attempt-93dff42079cf4d439118bae1b2c6b60e.jsonl"
+        }
+      ],
+      "result": {
+        "attempt_id": "attempt-93dff42079cf4d439118bae1b2c6b60e",
+        "paths": {
+          "index": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-93dff42079cf4d439118bae1b2c6b60e\\index.tif",
+          "valid_mask": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-93dff42079cf4d439118bae1b2c6b60e\\valid_mask.tif",
+          "water": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-93dff42079cf4d439118bae1b2c6b60e\\water.tif"
+        },
+        "receipt": {
+          "attempt_id": "attempt-93dff42079cf4d439118bae1b2c6b60e",
+          "contract": "optical-product-v1",
+          "grid": {
+            "aoi_bbox": [
+              19.91,
+              50.04,
+              19.94,
+              50.06
+            ],
+            "crs": "EPSG:32634",
+            "shape": [
+              114,
+              110
+            ],
+            "transform": [
+              20,
+              0,
+              421940,
+              0,
+              -20,
+              5545880
+            ]
+          },
+          "layers": {
+            "index": {
+              "filename": "index.tif",
+              "sha256": "067160d1adf60d55e69534bdc02c755f90577dfe965380084d087f9ce6f5b626",
+              "size_bytes": 43181
+            },
+            "valid_mask": {
+              "filename": "valid_mask.tif",
+              "sha256": "7df100bbdc514fb6714e7b949953f979ab108bc9e2f83ce8ad4592aa262738fc",
+              "size_bytes": 1640
+            },
+            "water": {
+              "filename": "water.tif",
+              "sha256": "dfa0ade11af8fc9f09c0fb78f3fc080bf16e6f07c38c1d9fe161d0077b74af4b",
+              "size_bytes": 1929
+            }
+          },
+          "metrics": {
+            "aoi_pixels": 11926,
+            "area_convention": "projected UTM grid area; pixel centers inside AOI",
+            "clear_input_fraction": 0.9919503605567668,
+            "clear_input_pixels": 11830,
+            "cloud_screened": true,
+            "denominator_or_product_rejected_pixels": 0,
+            "excluded_scl": [
+              0,
+              1,
+              2,
+              3,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "grid_pixels": 12540,
+            "mask_policy": "scl",
+            "maximum": 0.6182149052619934,
+            "mean": -0.3061111569404602,
+            "minimum": -0.6240190863609314,
+            "outside_nominal_range": 0,
+            "pixel_area_m2": 400.0,
+            "product_metrics": {
+              "candidate_water_area_m2": 245600.0,
+              "candidate_water_pixels": 614,
+              "observed_area_m2": 4732000.0,
+              "threshold": 0.0
+            },
+            "raw_valid_fraction": 1.0,
+            "raw_valid_pixels": 11926,
+            "reflectance_resampling": "average; require >=0.999 valid source fraction",
+            "scl_counts_in_aoi": {
+              "0": 0,
+              "1": 0,
+              "10": 0,
+              "11": 0,
+              "2": 96,
+              "3": 0,
+              "4": 6355,
+              "5": 4889,
+              "6": 586,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            },
+            "scl_resampling": "nearest",
+            "valid_fraction": 0.9919503605567668,
+            "valid_pixels": 11830
+          },
+          "request_id": "request-7d4fae878961b063de28e285255d12dad9ed2c045f45f1dae204632d1d1bcf7e"
+        },
+        "checked_at": "2026-11-16T09:05:00.279954Z"
+      },
+      "rejected_results": [],
+      "product": "mndwi",
+      "grid": {
+        "crs": "EPSG:32634",
+        "transform": [
+          20,
+          0,
+          421940,
+          0,
+          -20,
+          5545880
+        ],
+        "shape": [
+          114,
+          110
+        ],
+        "aoi_bbox": [
+          19.91,
+          50.04,
+          19.94,
+          50.06
+        ]
+      },
+      "qc": {
+        "assessment_id": 5,
+        "request_id": "request-7d4fae878961b063de28e285255d12dad9ed2c045f45f1dae204632d1d1bcf7e",
+        "attempt_id": "attempt-93dff42079cf4d439118bae1b2c6b60e",
+        "assessed_at": "2026-11-16T09:04:49.804342Z",
+        "policy_version": "coverage-range-v1",
+        "policy_json": "{\"minimum_valid_fraction\":0.5,\"outside_nominal_fraction_review\":0.02,\"require_cloud_screening\":true}",
+        "outcome": "accepted",
+        "reason": "Meets the recorded automatic coverage and range checks; visual/scientific interpretation still required",
+        "metrics_json": "{\"aoi_pixels\":11926,\"area_convention\":\"projected UTM grid area; pixel centers inside AOI\",\"clear_input_fraction\":0.9919503605567668,\"clear_input_pixels\":11830,\"cloud_screened\":true,\"denominator_or_product_rejected_pixels\":0,\"excluded_scl\":[0,1,2,3,7,8,9,10,11],\"grid_pixels\":12540,\"mask_policy\":\"scl\",\"maximum\":0.6182149052619934,\"mean\":-0.3061111569404602,\"minimum\":-0.6240190863609314,\"outside_nominal_range\":0,\"pixel_area_m2\":400.0,\"product_metrics\":{\"candidate_water_area_m2\":245600.0,\"candidate_water_pixels\":614,\"observed_area_m2\":4732000.0,\"threshold\":0.0},\"raw_valid_fraction\":1.0,\"raw_valid_pixels\":11926,\"reflectance_resampling\":\"average; require >=0.999 valid source fraction\",\"scl_counts_in_aoi\":{\"0\":0,\"1\":0,\"10\":0,\"11\":0,\"2\":96,\"3\":0,\"4\":6355,\"5\":4889,\"6\":586,\"7\":0,\"8\":0,\"9\":0},\"scl_resampling\":\"nearest\",\"valid_fraction\":0.9919503605567668,\"valid_pixels\":11830}"
+      }
+    },
+    {
+      "member_id": "S2B_T34UDA_20250610T095316_L2A-east-mndwi",
+      "request_id": "request-1eedff56daced21600beac675c3b95370fcc607e814d6038a7258e899cc7c3d0",
+      "state": "complete",
+      "reason": "All declared outputs were verified against the producing attempt",
+      "attempts_used": 1,
+      "attempts": [
+        {
+          "attempt_id": "attempt-4d799b1258bc476f96218742c6b319a3",
+          "status": "succeeded",
+          "stage": "complete",
+          "error_code": null,
+          "error_message": null,
+          "log_path": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\logs\\attempt-4d799b1258bc476f96218742c6b319a3.jsonl"
+        }
+      ],
+      "result": {
+        "attempt_id": "attempt-4d799b1258bc476f96218742c6b319a3",
+        "paths": {
+          "index": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-4d799b1258bc476f96218742c6b319a3\\index.tif",
+          "valid_mask": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-4d799b1258bc476f96218742c6b319a3\\valid_mask.tif",
+          "water": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-4d799b1258bc476f96218742c6b319a3\\water.tif"
+        },
+        "receipt": {
+          "attempt_id": "attempt-4d799b1258bc476f96218742c6b319a3",
+          "contract": "optical-product-v1",
+          "grid": {
+            "aoi_bbox": [
+              19.94,
+              50.04,
+              19.97,
+              50.06
+            ],
+            "crs": "EPSG:32634",
+            "shape": [
+              113,
+              110
+            ],
+            "transform": [
+              20,
+              0,
+              424080,
+              0,
+              -20,
+              5545840
+            ]
+          },
+          "layers": {
+            "index": {
+              "filename": "index.tif",
+              "sha256": "0637c49b04cf896cc454f2ed2f54de9e7a16e89158adf64d538fb0395f4d89b3",
+              "size_bytes": 43345
+            },
+            "valid_mask": {
+              "filename": "valid_mask.tif",
+              "sha256": "fa240df531b6da280fb227fc4c6336bc73757cc9f4296a9e99500df29c2c1cf9",
+              "size_bytes": 1668
+            },
+            "water": {
+              "filename": "water.tif",
+              "sha256": "98c333e7a8eac4a4378bf84cf3dabdd0f35365a4e12f373ba068b487b0995bc9",
+              "size_bytes": 2031
+            }
+          },
+          "metrics": {
+            "aoi_pixels": 11954,
+            "area_convention": "projected UTM grid area; pixel centers inside AOI",
+            "clear_input_fraction": 0.9905470972059561,
+            "clear_input_pixels": 11841,
+            "cloud_screened": true,
+            "denominator_or_product_rejected_pixels": 0,
+            "excluded_scl": [
+              0,
+              1,
+              2,
+              3,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "grid_pixels": 12430,
+            "mask_policy": "scl",
+            "maximum": 0.6469660997390747,
+            "mean": -0.2591337561607361,
+            "minimum": -0.6416237950325012,
+            "outside_nominal_range": 0,
+            "pixel_area_m2": 400.0,
+            "product_metrics": {
+              "candidate_water_area_m2": 260400.0,
+              "candidate_water_pixels": 651,
+              "observed_area_m2": 4736400.0,
+              "threshold": 0.0
+            },
+            "raw_valid_fraction": 1.0,
+            "raw_valid_pixels": 11954,
+            "reflectance_resampling": "average; require >=0.999 valid source fraction",
+            "scl_counts_in_aoi": {
+              "0": 0,
+              "1": 0,
+              "10": 0,
+              "11": 0,
+              "2": 113,
+              "3": 0,
+              "4": 3727,
+              "5": 7508,
+              "6": 606,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            },
+            "scl_resampling": "nearest",
+            "valid_fraction": 0.9905470972059561,
+            "valid_pixels": 11841
+          },
+          "request_id": "request-1eedff56daced21600beac675c3b95370fcc607e814d6038a7258e899cc7c3d0"
+        },
+        "checked_at": "2026-11-16T09:05:00.295610Z"
+      },
+      "rejected_results": [],
+      "product": "mndwi",
+      "grid": {
+        "crs": "EPSG:32634",
+        "transform": [
+          20,
+          0,
+          424080,
+          0,
+          -20,
+          5545840
+        ],
+        "shape": [
+          113,
+          110
+        ],
+        "aoi_bbox": [
+          19.94,
+          50.04,
+          19.97,
+          50.06
+        ]
+      },
+      "qc": {
+        "assessment_id": 6,
+        "request_id": "request-1eedff56daced21600beac675c3b95370fcc607e814d6038a7258e899cc7c3d0",
+        "attempt_id": "attempt-4d799b1258bc476f96218742c6b319a3",
+        "assessed_at": "2026-11-16T09:04:49.804342Z",
+        "policy_version": "coverage-range-v1",
+        "policy_json": "{\"minimum_valid_fraction\":0.5,\"outside_nominal_fraction_review\":0.02,\"require_cloud_screening\":true}",
+        "outcome": "accepted",
+        "reason": "Meets the recorded automatic coverage and range checks; visual/scientific interpretation still required",
+        "metrics_json": "{\"aoi_pixels\":11954,\"area_convention\":\"projected UTM grid area; pixel centers inside AOI\",\"clear_input_fraction\":0.9905470972059561,\"clear_input_pixels\":11841,\"cloud_screened\":true,\"denominator_or_product_rejected_pixels\":0,\"excluded_scl\":[0,1,2,3,7,8,9,10,11],\"grid_pixels\":12430,\"mask_policy\":\"scl\",\"maximum\":0.6469660997390747,\"mean\":-0.2591337561607361,\"minimum\":-0.6416237950325012,\"outside_nominal_range\":0,\"pixel_area_m2\":400.0,\"product_metrics\":{\"candidate_water_area_m2\":260400.0,\"candidate_water_pixels\":651,\"observed_area_m2\":4736400.0,\"threshold\":0.0},\"raw_valid_fraction\":1.0,\"raw_valid_pixels\":11954,\"reflectance_resampling\":\"average; require >=0.999 valid source fraction\",\"scl_counts_in_aoi\":{\"0\":0,\"1\":0,\"10\":0,\"11\":0,\"2\":113,\"3\":0,\"4\":3727,\"5\":7508,\"6\":606,\"7\":0,\"8\":0,\"9\":0},\"scl_resampling\":\"nearest\",\"valid_fraction\":0.9905470972059561,\"valid_pixels\":11841}"
+      }
+    }
+  ],
+  "counts": {
+    "ready": 0,
+    "complete": 6,
+    "blocked": 0,
+    "unresolved": 0,
+    "failed": 0
+  }
+}

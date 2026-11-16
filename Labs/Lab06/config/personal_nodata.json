@@ -1,0 +1,26 @@
+{
+  "database": "../work/personal/catalogue.sqlite",
+  "workspace": "../work/personal",
+  "max_attempts": 2,
+  "jobs": [
+    {
+      "member_id": "krakow_20250605_ndmi_nodata",
+      "item_id": "S2C_T34UDA_20250605T095638_L2A",
+      "aoi_bbox": [
+        19.91,
+        50.04,
+        19.94,
+        50.06
+      ],
+      "product": "ndmi",
+      "plugin": "../extensions/ndmi.py",
+      "parameters": {
+        "epsilon": 1E-06
+      },
+      "preparation": {
+        "mask_policy": "nodata_only",
+        "resolution_m": 20
+      }
+    }
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "batch_id": "batch-021c886a6d24605e58756f64c7d351c840d07d6bdedabb2b09a0377565cc67e8",
+  "generated_at": "2026-11-16T09:08:45.930018Z",
+  "members": [
+    {
+      "member_id": "krakow_20250605_ndmi_nodata",
+      "request_id": "request-8832e6a3983631bae2295c628403891bb48db03e85e4b1714cd7bf8fc33da332",
+      "state": "complete",
+      "reason": "All declared outputs were verified against the producing attempt",
+      "attempts_used": 1,
+      "attempts": [
+        {
+          "attempt_id": "attempt-17b48087103144b795eb1c5fd6321965",
+          "status": "succeeded",
+          "stage": "complete",
+          "error_code": null,
+          "error_message": null,
+          "log_path": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\personal\\logs\\attempt-17b48087103144b795eb1c5fd6321965.jsonl"
+        }
+      ],
+      "result": {
+        "attempt_id": "attempt-17b48087103144b795eb1c5fd6321965",
+        "paths": {
+          "index": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\personal\\outputs\\attempt-17b48087103144b795eb1c5fd6321965\\index.tif",
+          "valid_mask": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\personal\\outputs\\attempt-17b48087103144b795eb1c5fd6321965\\valid_mask.tif"
+        },
+        "receipt": {
+          "attempt_id": "attempt-17b48087103144b795eb1c5fd6321965",
+          "contract": "optical-product-v1",
+          "grid": {
+            "aoi_bbox": [
+              19.91,
+              50.04,
+              19.94,
+              50.06
+            ],
+            "crs": "EPSG:32634",
+            "shape": [
+              114,
+              110
+            ],
+            "transform": [
+              20,
+              0,
+              421940,
+              0,
+              -20,
+              5545880
+            ]
+          },
+          "layers": {
+            "index": {
+              "filename": "index.tif",
+              "sha256": "22837da747656fea25071b4dc627b61b2f8e787dfc4d180f6ce806010f59242b",
+              "size_bytes": 44768
+            },
+            "valid_mask": {
+              "filename": "valid_mask.tif",
+              "sha256": "3dddcd64d00aae440922c50ce02ca828ab194bec9c28416c52876a2f7516ca91",
+              "size_bytes": 1563
+            }
+          },
+          "metrics": {
+            "aoi_pixels": 11926,
+            "area_convention": "projected UTM grid area; pixel centers inside AOI",
+            "clear_input_fraction": 1.0,
+            "clear_input_pixels": 11926,
+            "cloud_screened": false,
+            "denominator_or_product_rejected_pixels": 0,
+            "excluded_scl": [
+              0,
+              1
+            ],
+            "grid_pixels": 12540,
+            "mask_policy": "nodata_only",
+            "maximum": 0.5117175579071045,
+            "mean": 0.17742617428302765,
+            "minimum": -0.3606034219264984,
+            "outside_nominal_range": 0,
+            "pixel_area_m2": 400.0,
+            "product_metrics": {
+              "mean_ndmi": 0.17742617428302765
+            },
+            "raw_valid_fraction": 1.0,
+            "raw_valid_pixels": 11926,
+            "reflectance_resampling": "average; require >=0.999 valid source fraction",
+            "scl_counts_in_aoi": {
+              "0": 0,
+              "1": 0,
+              "10": 0,
+              "11": 0,
+              "2": 72,
+              "3": 0,
+              "4": 6630,
+              "5": 4663,
+              "6": 561,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            },
+            "scl_resampling": "nearest",
+            "valid_fraction": 1.0,
+            "valid_pixels": 11926
+          },
+          "request_id": "request-8832e6a3983631bae2295c628403891bb48db03e85e4b1714cd7bf8fc33da332"
+        },
+        "checked_at": "2026-11-16T09:08:45.930018Z"
+      },
+      "rejected_results": [],
+      "product": "ndmi",
+      "grid": {
+        "crs": "EPSG:32634",
+        "transform": [
+          20,
+          0,
+          421940,
+          0,
+          -20,
+          5545880
+        ],
+        "shape": [
+          114,
+          110
+        ],
+        "aoi_bbox": [
+          19.91,
+          50.04,
+          19.94,
+          50.06
+        ]
+      },
+      "qc": {
+        "assessment_id": 3,
+        "request_id": "request-8832e6a3983631bae2295c628403891bb48db03e85e4b1714cd7bf8fc33da332",
+        "attempt_id": "attempt-17b48087103144b795eb1c5fd6321965",
+        "assessed_at": "2026-11-16T09:08:43.900823Z",
+        "policy_version": "coverage-range-v1",
+        "policy_json": "{\"minimum_valid_fraction\":0.5,\"outside_nominal_fraction_review\":0.02,\"require_cloud_screening\":true}",
+        "outcome": "review",
+        "reason": "Cloud screening was disabled for this diagnostic product",
+        "metrics_json": "{\"aoi_pixels\":11926,\"area_convention\":\"projected UTM grid area; pixel centers inside AOI\",\"clear_input_fraction\":1.0,\"clear_input_pixels\":11926,\"cloud_screened\":false,\"denominator_or_product_rejected_pixels\":0,\"excluded_scl\":[0,1],\"grid_pixels\":12540,\"mask_policy\":\"nodata_only\",\"maximum\":0.5117175579071045,\"mean\":0.17742617428302765,\"minimum\":-0.3606034219264984,\"outside_nominal_range\":0,\"pixel_area_m2\":400.0,\"product_metrics\":{\"mean_ndmi\":0.17742617428302765},\"raw_valid_fraction\":1.0,\"raw_valid_pixels\":11926,\"reflectance_resampling\":\"average; require >=0.999 valid source fraction\",\"scl_counts_in_aoi\":{\"0\":0,\"1\":0,\"10\":0,\"11\":0,\"2\":72,\"3\":0,\"4\":6630,\"5\":4663,\"6\":561,\"7\":0,\"8\":0,\"9\":0},\"scl_resampling\":\"nearest\",\"valid_fraction\":1.0,\"valid_pixels\":11926}"
+      }
+    }
+  ],
+  "counts": {
+    "ready": 0,
+    "complete": 1,
+    "blocked": 0,
+    "unresolved": 0,
+    "failed": 0
+  }
+}
