@@ -12,8 +12,8 @@ The report and science plan are in this folder. The personal NDMI extension, its
 | `inputs/` | Small Warsaw input bundle, source item records and checksums |
 | `evidence/personal/` and `evidence/nodata/` | Frozen manifests and generated personal reports |
 | `evidence/common/` | Reference exercise manifests, reports and assessment history |
-| `reproduce.py` and `compare_ndmi.py` | Local reproduction and common-pixel comparison helpers |
+| `compare_ndmi.py` | Common-pixel comparison helper |
 
-From the Lab 06 directory, `python submission/reproduce.py` runs the personal investigation with the included inputs in a new local workspace. It creates local manifests and reports without changing the saved evidence. See `report.md` for the individual commands and the limits of comparing results across environments
+See `report.md` for the commands to run the personal investigation with the included inputs and for the limits of comparing results across environments
 
 The input bundle is included here to satisfy the handout's submission requirement. Generated raster outputs and SQLite catalogues stay in the ignored `work/` directory
