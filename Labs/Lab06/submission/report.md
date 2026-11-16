@@ -25,16 +25,16 @@ The query in `investigation.sql` lists each attempt with its assessments. For `a
 
 ## Personal product
 
-I used NDMI to compare the 5 and 15 June scenes over a mixed area near Kraków. The question, bands, source and preparation choices are in [science_plan.md](science_plan.md). The extension is `extensions/ndmi.py`, version 1.0.0
+I used NDMI to compare the 15 and 30 June scenes over central Warsaw and the Vistula. The question, bands, source and preparation choices are in [science_plan.md](science_plan.md). The extension is `extensions/ndmi.py`, version 1.0.0
 
 | Date | Usable coverage | Mean NDMI | QC at 0.5 |
 |---|---:|---:|---|
-| 5 June | 99.40% | 0.177812 | accepted |
-| 15 June | 99.20% | 0.176633 | accepted |
+| 15 June | 99.39% | 0.121721 | accepted |
+| 30 June | 83.00% | 0.112302 | accepted |
 
-The means are close, but they include buildings, water and bare ground as well as vegetation. They use slightly different valid pixels, so I cannot use this difference as evidence of a change in vegetation moisture. A common-pixel comparison and field or reference data would make the interpretation stronger
+These means include buildings, water and bare ground as well as vegetation, and the second date has less usable coverage. On the 23,672 pixels valid on both dates, the mean was 0.129665 on 15 June and 0.112476 on 30 June, a difference of −0.017188. This is a mixed-surface spectral change, not evidence on its own of a change in vegetation moisture. Field or reference data and a vegetation-specific analysis would help interpret it
 
-The first run launched two attempts and repeating it launched none. Switching the 5 June mask to `nodata_only` produced request `request-8832e6a3983631bae2295c628403891bb48db03e85e4b1714cd7bf8fc33da332` and a new attempt, with mean 0.177426 and 100% usable pixels. QC marked it for review because screening was disabled. The small difference here does not mean cloud screening is unnecessary
+The first run launched two attempts and repeating it launched none. Switching the 15 June mask to `nodata_only` produced request `request-335fecccb942a6de1852e7afefb0ed35967ffde9a09dcff96bc99ca666025213` and a new attempt, with mean 0.120784 and 100% usable pixels. QC marked it for review because screening was disabled. The small difference here does not mean cloud screening is unnecessary
 
 For an independent arithmetic check I used NIR 0.6 and SWIR1 0.2, which gives 0.5 by hand. The test returned 0.5 and also checked that a zero denominator and a masked pixel become NaN. This checks the calculation and mask handling, but does not validate the satellite map against ground measurements
 
@@ -43,22 +43,23 @@ For an independent arithmetic check I used NIR 0.6 and SWIR1 0.2, which gives 0.
 Run these commands from `Labs/Lab06`. The retained `submission/inputs` bundle contains the source item records, B08, B11 and SCL subsets, checksums and acquisition metadata. On another machine, register that bundle and create a new manifest because the frozen manifests in `submission/evidence` record the original absolute paths and environment
 
 ```text
-python -m eo_processing init --database work/personal/catalogue.sqlite
-python -m eo_processing register --database work/personal/catalogue.sqlite --bundle submission/inputs
-python -m eo_processing plan --config config/personal_batch.json --out work/personal/batch.json
-python -m eo_processing run --manifest work/personal/batch.json
-python -m eo_processing assess --manifest work/personal/batch.json --minimum-valid-fraction 0.5
-python -m eo_processing report --manifest work/personal/batch.json --out work/personal/report
-python -m eo_processing run --manifest work/personal/batch.json
-python -m eo_processing plan --config config/personal_nodata.json --out work/personal/nodata_batch.json
-python -m eo_processing run --manifest work/personal/nodata_batch.json
-python -m eo_processing assess --manifest work/personal/nodata_batch.json
-python -m eo_processing report --manifest work/personal/nodata_batch.json --out work/personal/nodata_report
+python -m eo_processing init --database work/warsaw/catalogue.sqlite
+python -m eo_processing register --database work/warsaw/catalogue.sqlite --bundle submission/inputs
+python -m eo_processing plan --config config/personal_batch.json --out work/warsaw/batch.json
+python -m eo_processing run --manifest work/warsaw/batch.json
+python -m eo_processing assess --manifest work/warsaw/batch.json --minimum-valid-fraction 0.5
+python -m eo_processing report --manifest work/warsaw/batch.json --out work/warsaw/report
+python -m eo_processing run --manifest work/warsaw/batch.json
+python -m eo_processing plan --config config/personal_nodata.json --out work/warsaw/nodata_batch.json
+python -m eo_processing run --manifest work/warsaw/nodata_batch.json
+python -m eo_processing assess --manifest work/warsaw/nodata_batch.json
+python -m eo_processing report --manifest work/warsaw/nodata_batch.json --out work/warsaw/nodata_report
+python submission/compare_ndmi.py work/warsaw/report/report.json
 python -m pytest tests/test_personal_ndmi.py
 python -m eo_processing check-core
 ```
 
-I obtained the inputs with `python -m eo_processing acquire --config config/personal_acquisition.json --destination work/personal/inputs` after searching the public Earth Search catalogue. The exact item IDs, source URLs, checksums and calibration are in `submission/inputs/manifest.json`. The original frozen manifests and generated JSON and HTML reports are in `submission/evidence`. `check-core` reported version 1.0.0 identical to the class release with no changed files
+I obtained the inputs with `python -m eo_processing acquire --config config/personal_acquisition.json --destination work/warsaw/inputs` after searching the public Earth Search catalogue. The exact item IDs, source URLs, checksums and calibration are in `submission/inputs/manifest.json`. The frozen manifests and generated JSON and HTML reports are in `submission/evidence`. `check-core` reported version 1.0.0 identical to the class release with no changed files
 
 ## Debugging clinic and assistance
 
