@@ -40,7 +40,11 @@ For an independent arithmetic check I used NIR 0.6 and SWIR1 0.2, which gives 0.
 
 ## Reproduction and evidence
 
-Run these commands from `Labs/Lab06`. The retained `submission/inputs` bundle contains the source item records, B08, B11 and SCL subsets, checksums and acquisition metadata. On another machine, register that bundle and create a new manifest because the frozen manifests in `submission/evidence` record the original absolute paths and environment
+From `Labs/Lab06`, run `python submission/reproduce.py` in the lab environment. It registers the included inputs, creates local manifests, runs both configurations and writes reports and the common-pixel comparison to `work/warsaw-reproduction`. To keep an existing workspace, choose a new one with `--workspace work/another-run`. It uses no network for the bundled inputs
+
+The retained `submission/inputs` bundle contains the source item records, B08, B11 and SCL subsets, checksums and acquisition metadata. The script creates new local manifests because those in `submission/evidence` record the original absolute paths and environment. Different software versions or operating systems are recorded in the new request identity and may affect the results
+
+The individual commands used for the original run are below
 
 ```text
 python -m eo_processing init --database work/warsaw/catalogue.sqlite
