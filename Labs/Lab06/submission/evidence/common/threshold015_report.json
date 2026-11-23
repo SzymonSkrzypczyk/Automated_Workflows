@@ -1,0 +1,168 @@
+{
+  "batch_id": "batch-7f8478075263bdb63fe6b0ffe216f5846bbfeb3a045f0dfc72ab6e19d36b93f0",
+  "generated_at": "2026-11-16T09:05:16.320702Z",
+  "members": [
+    {
+      "member_id": "river-clear-date-mndwi",
+      "request_id": "request-272efb909e07c8ffdf160afa7bf39230c33d3c74f720644205939cfed85f338a",
+      "state": "complete",
+      "reason": "All declared outputs were verified against the producing attempt",
+      "attempts_used": 1,
+      "attempts": [
+        {
+          "attempt_id": "attempt-9758755040544bfdb637d867a3828c22",
+          "status": "succeeded",
+          "stage": "complete",
+          "error_code": null,
+          "error_message": null,
+          "log_path": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\logs\\attempt-9758755040544bfdb637d867a3828c22.jsonl"
+        }
+      ],
+      "result": {
+        "attempt_id": "attempt-9758755040544bfdb637d867a3828c22",
+        "paths": {
+          "index": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-9758755040544bfdb637d867a3828c22\\index.tif",
+          "valid_mask": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-9758755040544bfdb637d867a3828c22\\valid_mask.tif",
+          "water": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-9758755040544bfdb637d867a3828c22\\water.tif"
+        },
+        "receipt": {
+          "attempt_id": "attempt-9758755040544bfdb637d867a3828c22",
+          "contract": "optical-product-v1",
+          "grid": {
+            "aoi_bbox": [
+              19.91,
+              50.04,
+              19.94,
+              50.06
+            ],
+            "crs": "EPSG:32634",
+            "shape": [
+              114,
+              110
+            ],
+            "transform": [
+              20,
+              0,
+              421940,
+              0,
+              -20,
+              5545880
+            ]
+          },
+          "layers": {
+            "index": {
+              "filename": "index.tif",
+              "sha256": "e5624a9f285f28f7127acf738498b7110c8da3bd609803c52e4a72afa860b5cb",
+              "size_bytes": 43441
+            },
+            "valid_mask": {
+              "filename": "valid_mask.tif",
+              "sha256": "ee697f986a78a64fd031888bde61e1d0bfab8eac41eaa9132a0a733f132c660e",
+              "size_bytes": 1616
+            },
+            "water": {
+              "filename": "water.tif",
+              "sha256": "725e4cf2dd8bb0fc40b0aa71844fc41e06860a30788de5a995bb416d2288251b",
+              "size_bytes": 1825
+            }
+          },
+          "metrics": {
+            "aoi_pixels": 11926,
+            "area_convention": "projected UTM grid area; pixel centers inside AOI",
+            "clear_input_fraction": 0.9939627704175751,
+            "clear_input_pixels": 11854,
+            "cloud_screened": true,
+            "denominator_or_product_rejected_pixels": 0,
+            "excluded_scl": [
+              0,
+              1,
+              2,
+              3,
+              7,
+              8,
+              9,
+              10,
+              11
+            ],
+            "grid_pixels": 12540,
+            "mask_policy": "scl",
+            "maximum": 0.4657980501651764,
+            "mean": -0.3419964611530304,
+            "minimum": -0.6638950705528259,
+            "outside_nominal_range": 0,
+            "pixel_area_m2": 400.0,
+            "product_metrics": {
+              "candidate_water_area_m2": 181600.0,
+              "candidate_water_pixels": 454,
+              "observed_area_m2": 4741600.0,
+              "threshold": 0.15
+            },
+            "raw_valid_fraction": 1.0,
+            "raw_valid_pixels": 11926,
+            "reflectance_resampling": "average; require >=0.999 valid source fraction",
+            "scl_counts_in_aoi": {
+              "0": 0,
+              "1": 0,
+              "10": 0,
+              "11": 0,
+              "2": 72,
+              "3": 0,
+              "4": 6630,
+              "5": 4663,
+              "6": 561,
+              "7": 0,
+              "8": 0,
+              "9": 0
+            },
+            "scl_resampling": "nearest",
+            "valid_fraction": 0.9939627704175751,
+            "valid_pixels": 11854
+          },
+          "request_id": "request-272efb909e07c8ffdf160afa7bf39230c33d3c74f720644205939cfed85f338a"
+        },
+        "checked_at": "2026-11-16T09:05:16.320702Z"
+      },
+      "rejected_results": [],
+      "product": "mndwi",
+      "grid": {
+        "crs": "EPSG:32634",
+        "transform": [
+          20,
+          0,
+          421940,
+          0,
+          -20,
+          5545880
+        ],
+        "shape": [
+          114,
+          110
+        ],
+        "aoi_bbox": [
+          19.91,
+          50.04,
+          19.94,
+          50.06
+        ]
+      },
+      "qc": {
+        "assessment_id": 8,
+        "request_id": "request-272efb909e07c8ffdf160afa7bf39230c33d3c74f720644205939cfed85f338a",
+        "attempt_id": "attempt-9758755040544bfdb637d867a3828c22",
+        "assessed_at": "2026-11-16T09:05:14.307395Z",
+        "policy_version": "coverage-range-v1",
+        "policy_json": "{\"minimum_valid_fraction\":0.5,\"outside_nominal_fraction_review\":0.02,\"require_cloud_screening\":true}",
+        "outcome": "accepted",
+        "reason": "Meets the recorded automatic coverage and range checks; visual/scientific interpretation still required",
+        "metrics_json": "{\"aoi_pixels\":11926,\"area_convention\":\"projected UTM grid area; pixel centers inside AOI\",\"clear_input_fraction\":0.9939627704175751,\"clear_input_pixels\":11854,\"cloud_screened\":true,\"denominator_or_product_rejected_pixels\":0,\"excluded_scl\":[0,1,2,3,7,8,9,10,11],\"grid_pixels\":12540,\"mask_policy\":\"scl\",\"maximum\":0.4657980501651764,\"mean\":-0.3419964611530304,\"minimum\":-0.6638950705528259,\"outside_nominal_range\":0,\"pixel_area_m2\":400.0,\"product_metrics\":{\"candidate_water_area_m2\":181600.0,\"candidate_water_pixels\":454,\"observed_area_m2\":4741600.0,\"threshold\":0.15},\"raw_valid_fraction\":1.0,\"raw_valid_pixels\":11926,\"reflectance_resampling\":\"average; require >=0.999 valid source fraction\",\"scl_counts_in_aoi\":{\"0\":0,\"1\":0,\"10\":0,\"11\":0,\"2\":72,\"3\":0,\"4\":6630,\"5\":4663,\"6\":561,\"7\":0,\"8\":0,\"9\":0},\"scl_resampling\":\"nearest\",\"valid_fraction\":0.9939627704175751,\"valid_pixels\":11854}"
+      }
+    }
+  ],
+  "counts": {
+    "ready": 0,
+    "complete": 1,
+    "blocked": 0,
+    "unresolved": 0,
+    "failed": 0
+  }
+}

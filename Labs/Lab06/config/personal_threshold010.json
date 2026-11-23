@@ -1,0 +1,38 @@
+{
+  "database": "../work/czeladz/catalogue.sqlite",
+  "workspace": "../work/czeladz",
+  "max_attempts": 2,
+  "jobs": [
+    {
+      "member_id": "czeladz_20250705_ndbi_threshold010",
+      "item_id": "S2C_T34UCA_20250705T095217_L2A",
+      "aoi_bbox": [
+        19.04,
+        50.29,
+        19.1,
+        50.33
+      ],
+      "product": "ndbi",
+      "plugin": "../extensions/ndbi.py",
+      "parameters": {
+        "threshold": 0.1,
+        "epsilon": 1E-06
+      },
+      "preparation": {
+        "resolution_m": 20,
+        "mask_policy": "scl",
+        "excluded_scl": [
+          0,
+          1,
+          2,
+          3,
+          7,
+          8,
+          9,
+          10,
+          11
+        ]
+      }
+    }
+  ]
+}

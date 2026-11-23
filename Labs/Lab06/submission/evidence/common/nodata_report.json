@@ -1,0 +1,161 @@
+{
+  "batch_id": "batch-16c8e95b2d184d485822dcd75558da9f5d3a871d2a33a2047b70ebf5d697f88e",
+  "generated_at": "2026-11-16T09:05:08.710348Z",
+  "members": [
+    {
+      "member_id": "river-cloudy-date-unscreened",
+      "request_id": "request-47c4337e303961fa952bca28c164b14fd58ac9776727a4afa7388b5ce8659d67",
+      "state": "complete",
+      "reason": "All declared outputs were verified against the producing attempt",
+      "attempts_used": 1,
+      "attempts": [
+        {
+          "attempt_id": "attempt-ddf822da51d74219847de7431d1e81c8",
+          "status": "succeeded",
+          "stage": "complete",
+          "error_code": null,
+          "error_message": null,
+          "log_path": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\logs\\attempt-ddf822da51d74219847de7431d1e81c8.jsonl"
+        }
+      ],
+      "result": {
+        "attempt_id": "attempt-ddf822da51d74219847de7431d1e81c8",
+        "paths": {
+          "index": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-ddf822da51d74219847de7431d1e81c8\\index.tif",
+          "valid_mask": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-ddf822da51d74219847de7431d1e81c8\\valid_mask.tif",
+          "water": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\demo\\outputs\\attempt-ddf822da51d74219847de7431d1e81c8\\water.tif"
+        },
+        "receipt": {
+          "attempt_id": "attempt-ddf822da51d74219847de7431d1e81c8",
+          "contract": "optical-product-v1",
+          "grid": {
+            "aoi_bbox": [
+              19.91,
+              50.04,
+              19.94,
+              50.06
+            ],
+            "crs": "EPSG:32634",
+            "shape": [
+              114,
+              110
+            ],
+            "transform": [
+              20,
+              0,
+              421940,
+              0,
+              -20,
+              5545880
+            ]
+          },
+          "layers": {
+            "index": {
+              "filename": "index.tif",
+              "sha256": "56e0486b61f87f6de27438669b6d21d0268736c7d3e73fe7250cac703fb6b62c",
+              "size_bytes": 43073
+            },
+            "valid_mask": {
+              "filename": "valid_mask.tif",
+              "sha256": "a60e0be89e6acf03bb7b585c0e81d0f9713464c607891d9873660f65fed6c631",
+              "size_bytes": 1564
+            },
+            "water": {
+              "filename": "water.tif",
+              "sha256": "538136c8e28163095eecd1bcea31b5bf588ab2cddf23b1805d91f4187ff9f7cd",
+              "size_bytes": 1837
+            }
+          },
+          "metrics": {
+            "aoi_pixels": 11926,
+            "area_convention": "projected UTM grid area; pixel centers inside AOI",
+            "clear_input_fraction": 1.0,
+            "clear_input_pixels": 11926,
+            "cloud_screened": false,
+            "denominator_or_product_rejected_pixels": 0,
+            "excluded_scl": [
+              0,
+              1
+            ],
+            "grid_pixels": 12540,
+            "mask_policy": "nodata_only",
+            "maximum": 0.496636301279068,
+            "mean": -0.30167847871780396,
+            "minimum": -0.6193728446960449,
+            "outside_nominal_range": 0,
+            "pixel_area_m2": 400.0,
+            "product_metrics": {
+              "candidate_water_area_m2": 233600.0,
+              "candidate_water_pixels": 584,
+              "observed_area_m2": 4770400.0,
+              "threshold": 0.0
+            },
+            "raw_valid_fraction": 1.0,
+            "raw_valid_pixels": 11926,
+            "reflectance_resampling": "average; require >=0.999 valid source fraction",
+            "scl_counts_in_aoi": {
+              "0": 0,
+              "1": 0,
+              "10": 5819,
+              "11": 0,
+              "2": 68,
+              "3": 273,
+              "4": 2630,
+              "5": 2736,
+              "6": 311,
+              "7": 0,
+              "8": 78,
+              "9": 11
+            },
+            "scl_resampling": "nearest",
+            "valid_fraction": 1.0,
+            "valid_pixels": 11926
+          },
+          "request_id": "request-47c4337e303961fa952bca28c164b14fd58ac9776727a4afa7388b5ce8659d67"
+        },
+        "checked_at": "2026-11-16T09:05:08.710348Z"
+      },
+      "rejected_results": [],
+      "product": "mndwi",
+      "grid": {
+        "crs": "EPSG:32634",
+        "transform": [
+          20,
+          0,
+          421940,
+          0,
+          -20,
+          5545880
+        ],
+        "shape": [
+          114,
+          110
+        ],
+        "aoi_bbox": [
+          19.91,
+          50.04,
+          19.94,
+          50.06
+        ]
+      },
+      "qc": {
+        "assessment_id": 7,
+        "request_id": "request-47c4337e303961fa952bca28c164b14fd58ac9776727a4afa7388b5ce8659d67",
+        "attempt_id": "attempt-ddf822da51d74219847de7431d1e81c8",
+        "assessed_at": "2026-11-16T09:05:06.693743Z",
+        "policy_version": "coverage-range-v1",
+        "policy_json": "{\"minimum_valid_fraction\":0.5,\"outside_nominal_fraction_review\":0.02,\"require_cloud_screening\":true}",
+        "outcome": "review",
+        "reason": "Cloud screening was disabled for this diagnostic product",
+        "metrics_json": "{\"aoi_pixels\":11926,\"area_convention\":\"projected UTM grid area; pixel centers inside AOI\",\"clear_input_fraction\":1.0,\"clear_input_pixels\":11926,\"cloud_screened\":false,\"denominator_or_product_rejected_pixels\":0,\"excluded_scl\":[0,1],\"grid_pixels\":12540,\"mask_policy\":\"nodata_only\",\"maximum\":0.496636301279068,\"mean\":-0.30167847871780396,\"minimum\":-0.6193728446960449,\"outside_nominal_range\":0,\"pixel_area_m2\":400.0,\"product_metrics\":{\"candidate_water_area_m2\":233600.0,\"candidate_water_pixels\":584,\"observed_area_m2\":4770400.0,\"threshold\":0.0},\"raw_valid_fraction\":1.0,\"raw_valid_pixels\":11926,\"reflectance_resampling\":\"average; require >=0.999 valid source fraction\",\"scl_counts_in_aoi\":{\"0\":0,\"1\":0,\"10\":5819,\"11\":0,\"2\":68,\"3\":273,\"4\":2630,\"5\":2736,\"6\":311,\"7\":0,\"8\":78,\"9\":11},\"scl_resampling\":\"nearest\",\"valid_fraction\":1.0,\"valid_pixels\":11926}"
+      }
+    }
+  ],
+  "counts": {
+    "ready": 0,
+    "complete": 1,
+    "blocked": 0,
+    "unresolved": 0,
+    "failed": 0
+  }
+}
