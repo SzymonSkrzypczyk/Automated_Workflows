@@ -27,6 +27,10 @@ The query in `investigation.sql` lists each attempt with its assessments. For `a
 
 I used NDBI to compare candidate built-up surfaces in a part of Czeladź on 1 July 2020 and 5 July 2025. The question, bands, source and preparation choices are in [science_plan.md](science_plan.md). The extension is `extensions/ndbi.py`, version 1.0.0. The bounding box includes surrounding land and is not the municipal boundary
 
+![NDBI maps for the Czeladź area on 1 July 2020 and 5 July 2025, shown with the same colour scale](evidence/personal/czeladz_ndbi_2020_2025.png)
+
+The maps use the same colour scale, with higher NDBI values in red and unavailable pixels in grey. Higher values can also occur over exposed soil, so the colours alone do not confirm built-up land
+
 | Date | Raw coverage | Usable coverage | Candidate area at threshold 0 | QC at 0.5 |
 |---|---:|---:|---:|---|
 | 1 July 2020 | 100% | 99.81% | 2,361,200 m² | accepted |
@@ -60,6 +64,7 @@ python -m eo_processing assess --manifest work/czeladz/threshold010_batch.json
 python -m eo_processing report --manifest work/czeladz/threshold010_batch.json --out work/czeladz/threshold010_report
 python submission/compare_ndbi.py work/czeladz/report/report.json
 python submission/check_real_ndbi.py work/czeladz/report/report.json
+python submission/plot_ndbi.py work/czeladz/report/report.json work/czeladz/ndbi_maps.png
 python -m pytest tests/test_personal_ndbi.py
 python -m eo_processing check-core
 ```

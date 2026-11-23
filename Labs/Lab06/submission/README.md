@@ -10,9 +10,9 @@ The report and science plan are in this folder. The personal NDBI extension, its
 | `investigation.sql` | Queries for execution history, outputs and assessments |
 | `../tests/test_personal_ndbi.py` | Arithmetic and invalid-pixel check |
 | `inputs/` | Small Czeladź input bundle, source item records and checksums |
-| `evidence/personal/` and `evidence/threshold010/` | Frozen manifests and generated personal reports |
+| `evidence/personal/` and `evidence/threshold010/` | Frozen manifests, NDBI maps and generated personal reports |
 | `evidence/common/` | Reference exercise manifests, reports and assessment history |
-| `reproduce.py`, `compare_ndbi.py` and `check_real_ndbi.py` | Local reproduction, comparison and real-pixel check |
+| `reproduce.py`, `compare_ndbi.py`, `check_real_ndbi.py` and `plot_ndbi.py` | Local reproduction, comparison, real-pixel check and maps |
 
 From the Lab 06 directory, `python submission/reproduce.py` runs the personal investigation with the included inputs in a new local workspace. It creates local manifests and reports without changing the saved evidence. See `report.md` for the individual commands and the limits of comparing results across environments
 

@@ -45,6 +45,8 @@ def main():
                     str(workspace / "batch_report/report.json")], cwd=ROOT, check=True)
     subprocess.run([sys.executable, str(ROOT / "submission/check_real_ndbi.py"),
                     str(workspace / "batch_report/report.json")], cwd=ROOT, check=True)
+    subprocess.run([sys.executable, str(ROOT / "submission/plot_ndbi.py"),
+                    str(workspace / "batch_report/report.json"), str(workspace / "ndbi_maps.png")], cwd=ROOT, check=True)
     print(f"\nResults saved in {workspace}")
 
 
