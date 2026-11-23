@@ -29,7 +29,7 @@ I used NDBI to compare candidate built-up surfaces in a part of Czeladź on 1 Ju
 
 ![NDBI maps for the Czeladź area on 1 July 2020 and 5 July 2025, shown with the same colour scale](evidence/personal/czeladz_ndbi_2020_2025.png)
 
-The maps use the same colour scale, with higher NDBI values in red and unavailable pixels in grey. Higher values can also occur over exposed soil, so the colours alone do not confirm built-up land
+The maps use the same colour scale, with higher NDBI values in brown and unavailable pixels in grey. The grid resolution is 20 m and the coordinates are in EPSG:32634. Higher values can also occur over exposed soil, so the colours alone do not confirm built-up land
 
 | Date | Raw coverage | Usable coverage | Candidate area at threshold 0 | QC at 0.5 |
 |---|---:|---:|---:|---|
