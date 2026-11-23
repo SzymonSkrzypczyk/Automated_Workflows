@@ -1,70 +1,76 @@
 {
-  "batch_id": "batch-7856af8354bc6558526f36b206459e82a41524053c7002a3cf64fbbdde56083d",
-  "generated_at": "2026-11-16T09:15:01.590831Z",
+  "batch_id": "batch-b95f5530da86b7dd06a4f154ab972c18a80095c3dcfc99f0c34aca1b8fa6da43",
+  "generated_at": "2026-11-23T09:13:37.595333Z",
   "members": [
     {
-      "member_id": "warsaw_20250615_ndmi",
-      "request_id": "request-d579969cd7070f1a132643fe6228eed67d1809248e72819f4e99ced822aff0f7",
+      "member_id": "czeladz_20200701_ndbi",
+      "request_id": "request-d55fbcd201c145d95d6cce6b46ba3c505087b9f0c670e1b5eaf2ec3b39968208",
       "state": "complete",
       "reason": "All declared outputs were verified against the producing attempt",
       "attempts_used": 1,
       "attempts": [
         {
-          "attempt_id": "attempt-0b1de26d65cd457d8f98709a6ead4b2c",
+          "attempt_id": "attempt-56edcba3167f47c9aa1b0112683f206b",
           "status": "succeeded",
           "stage": "complete",
           "error_code": null,
           "error_message": null,
-          "log_path": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\warsaw\\logs\\attempt-0b1de26d65cd457d8f98709a6ead4b2c.jsonl"
+          "log_path": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\czeladz\\logs\\attempt-56edcba3167f47c9aa1b0112683f206b.jsonl"
         }
       ],
       "result": {
-        "attempt_id": "attempt-0b1de26d65cd457d8f98709a6ead4b2c",
+        "attempt_id": "attempt-56edcba3167f47c9aa1b0112683f206b",
         "paths": {
-          "index": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\warsaw\\outputs\\attempt-0b1de26d65cd457d8f98709a6ead4b2c\\index.tif",
-          "valid_mask": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\warsaw\\outputs\\attempt-0b1de26d65cd457d8f98709a6ead4b2c\\valid_mask.tif"
+          "candidate": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\czeladz\\outputs\\attempt-56edcba3167f47c9aa1b0112683f206b\\candidate.tif",
+          "index": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\czeladz\\outputs\\attempt-56edcba3167f47c9aa1b0112683f206b\\index.tif",
+          "valid_mask": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\czeladz\\outputs\\attempt-56edcba3167f47c9aa1b0112683f206b\\valid_mask.tif"
         },
         "receipt": {
-          "attempt_id": "attempt-0b1de26d65cd457d8f98709a6ead4b2c",
+          "attempt_id": "attempt-56edcba3167f47c9aa1b0112683f206b",
           "contract": "optical-product-v1",
           "grid": {
             "aoi_bbox": [
-              20.99,
-              52.225,
-              21.04,
-              52.255
+              19.04,
+              50.29,
+              19.1,
+              50.33
             ],
             "crs": "EPSG:32634",
             "shape": [
-              168,
-              172
+              228,
+              220
             ],
             "transform": [
               20,
               0,
-              499300,
+              360380,
               0,
               -20,
-              5789420
+              5577160
             ]
           },
           "layers": {
+            "candidate": {
+              "filename": "candidate.tif",
+              "sha256": "e57a5110fd774057c005019c5ba174f2e3ebd3c60a9e812e14e407d6aff774d7",
+              "size_bytes": 7154
+            },
             "index": {
               "filename": "index.tif",
-              "sha256": "f306b33391996e1cc54d1ffd34d3234a056334bee85360d3d81f70df768afc4e",
-              "size_bytes": 107324
+              "sha256": "70f2556935925acddaffd9a36227c20f3eb33d34ab4722eec3ab3c325bb1e2af",
+              "size_bytes": 172958
             },
             "valid_mask": {
               "filename": "valid_mask.tif",
-              "sha256": "fed219f4806eecbb223b002afc9381d8d48de25411447ca8a05a4f539e63ef39",
-              "size_bytes": 2691
+              "sha256": "c2d0fba50efcf79f27e4a32b6553e53e6d22b2eab7e7cac1aaa476e83a4f5041",
+              "size_bytes": 2649
             }
           },
           "metrics": {
-            "aoi_pixels": 28557,
+            "aoi_pixels": 47524,
             "area_convention": "projected UTM grid area; pixel centers inside AOI",
-            "clear_input_fraction": 0.9939419406800434,
-            "clear_input_pixels": 28384,
+            "clear_input_fraction": 0.9981062200151503,
+            "clear_input_pixels": 47434,
             "cloud_screened": true,
             "denominator_or_product_rejected_pixels": 0,
             "excluded_scl": [
@@ -78,139 +84,148 @@
               10,
               11
             ],
-            "grid_pixels": 28896,
+            "grid_pixels": 50160,
             "mask_policy": "scl",
-            "maximum": 0.6701949834823608,
-            "mean": 0.12172145396471024,
-            "minimum": -0.8502745628356934,
+            "maximum": 0.31363949179649353,
+            "mean": -0.2050597369670868,
+            "minimum": -0.5822128057479858,
             "outside_nominal_range": 0,
             "pixel_area_m2": 400.0,
             "product_metrics": {
-              "mean_ndmi": 0.12172145396471024
+              "candidate_area_m2": 2361200.0,
+              "candidate_pixels": 5903,
+              "observed_area_m2": 18973600.0,
+              "threshold": 0.0
             },
             "raw_valid_fraction": 1.0,
-            "raw_valid_pixels": 28557,
+            "raw_valid_pixels": 47524,
             "reflectance_resampling": "average; require >=0.999 valid source fraction",
             "scl_counts_in_aoi": {
               "0": 0,
               "1": 0,
               "10": 0,
               "11": 0,
-              "2": 171,
+              "2": 61,
               "3": 0,
-              "4": 10327,
-              "5": 16398,
-              "6": 1659,
-              "7": 2,
+              "4": 36684,
+              "5": 10738,
+              "6": 12,
+              "7": 29,
               "8": 0,
               "9": 0
             },
             "scl_resampling": "nearest",
-            "valid_fraction": 0.9939419406800434,
-            "valid_pixels": 28384
+            "valid_fraction": 0.9981062200151503,
+            "valid_pixels": 47434
           },
-          "request_id": "request-d579969cd7070f1a132643fe6228eed67d1809248e72819f4e99ced822aff0f7"
+          "request_id": "request-d55fbcd201c145d95d6cce6b46ba3c505087b9f0c670e1b5eaf2ec3b39968208"
         },
-        "checked_at": "2026-11-16T09:15:01.574840Z"
+        "checked_at": "2026-11-23T09:13:37.579683Z"
       },
       "rejected_results": [],
-      "product": "ndmi",
+      "product": "ndbi",
       "grid": {
         "crs": "EPSG:32634",
         "transform": [
           20,
           0,
-          499300,
+          360380,
           0,
           -20,
-          5789420
+          5577160
         ],
         "shape": [
-          168,
-          172
+          228,
+          220
         ],
         "aoi_bbox": [
-          20.99,
-          52.225,
-          21.04,
-          52.255
+          19.04,
+          50.29,
+          19.1,
+          50.33
         ]
       },
       "qc": {
         "assessment_id": 1,
-        "request_id": "request-d579969cd7070f1a132643fe6228eed67d1809248e72819f4e99ced822aff0f7",
-        "attempt_id": "attempt-0b1de26d65cd457d8f98709a6ead4b2c",
-        "assessed_at": "2026-11-16T09:14:59.563227Z",
+        "request_id": "request-d55fbcd201c145d95d6cce6b46ba3c505087b9f0c670e1b5eaf2ec3b39968208",
+        "attempt_id": "attempt-56edcba3167f47c9aa1b0112683f206b",
+        "assessed_at": "2026-11-23T09:13:35.313210Z",
         "policy_version": "coverage-range-v1",
         "policy_json": "{\"minimum_valid_fraction\":0.5,\"outside_nominal_fraction_review\":0.02,\"require_cloud_screening\":true}",
         "outcome": "accepted",
         "reason": "Meets the recorded automatic coverage and range checks; visual/scientific interpretation still required",
-        "metrics_json": "{\"aoi_pixels\":28557,\"area_convention\":\"projected UTM grid area; pixel centers inside AOI\",\"clear_input_fraction\":0.9939419406800434,\"clear_input_pixels\":28384,\"cloud_screened\":true,\"denominator_or_product_rejected_pixels\":0,\"excluded_scl\":[0,1,2,3,7,8,9,10,11],\"grid_pixels\":28896,\"mask_policy\":\"scl\",\"maximum\":0.6701949834823608,\"mean\":0.12172145396471024,\"minimum\":-0.8502745628356934,\"outside_nominal_range\":0,\"pixel_area_m2\":400.0,\"product_metrics\":{\"mean_ndmi\":0.12172145396471024},\"raw_valid_fraction\":1.0,\"raw_valid_pixels\":28557,\"reflectance_resampling\":\"average; require >=0.999 valid source fraction\",\"scl_counts_in_aoi\":{\"0\":0,\"1\":0,\"10\":0,\"11\":0,\"2\":171,\"3\":0,\"4\":10327,\"5\":16398,\"6\":1659,\"7\":2,\"8\":0,\"9\":0},\"scl_resampling\":\"nearest\",\"valid_fraction\":0.9939419406800434,\"valid_pixels\":28384}"
+        "metrics_json": "{\"aoi_pixels\":47524,\"area_convention\":\"projected UTM grid area; pixel centers inside AOI\",\"clear_input_fraction\":0.9981062200151503,\"clear_input_pixels\":47434,\"cloud_screened\":true,\"denominator_or_product_rejected_pixels\":0,\"excluded_scl\":[0,1,2,3,7,8,9,10,11],\"grid_pixels\":50160,\"mask_policy\":\"scl\",\"maximum\":0.31363949179649353,\"mean\":-0.2050597369670868,\"minimum\":-0.5822128057479858,\"outside_nominal_range\":0,\"pixel_area_m2\":400.0,\"product_metrics\":{\"candidate_area_m2\":2361200.0,\"candidate_pixels\":5903,\"observed_area_m2\":18973600.0,\"threshold\":0.0},\"raw_valid_fraction\":1.0,\"raw_valid_pixels\":47524,\"reflectance_resampling\":\"average; require >=0.999 valid source fraction\",\"scl_counts_in_aoi\":{\"0\":0,\"1\":0,\"10\":0,\"11\":0,\"2\":61,\"3\":0,\"4\":36684,\"5\":10738,\"6\":12,\"7\":29,\"8\":0,\"9\":0},\"scl_resampling\":\"nearest\",\"valid_fraction\":0.9981062200151503,\"valid_pixels\":47434}"
       }
     },
     {
-      "member_id": "warsaw_20250630_ndmi",
-      "request_id": "request-ae85cc19bffe9f0563ca1e34e6deb51a58e3534b923033b548e873ef13345abb",
+      "member_id": "czeladz_20250705_ndbi",
+      "request_id": "request-981aab2a220f299cea4928a839282beb762d6d956310d0d69ea74d6da895a2f7",
       "state": "complete",
       "reason": "All declared outputs were verified against the producing attempt",
       "attempts_used": 1,
       "attempts": [
         {
-          "attempt_id": "attempt-34d160f9bddb4e239c9cc970e40d63a2",
+          "attempt_id": "attempt-8b526255c2854e97b959da6089c6dab8",
           "status": "succeeded",
           "stage": "complete",
           "error_code": null,
           "error_message": null,
-          "log_path": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\warsaw\\logs\\attempt-34d160f9bddb4e239c9cc970e40d63a2.jsonl"
+          "log_path": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\czeladz\\logs\\attempt-8b526255c2854e97b959da6089c6dab8.jsonl"
         }
       ],
       "result": {
-        "attempt_id": "attempt-34d160f9bddb4e239c9cc970e40d63a2",
+        "attempt_id": "attempt-8b526255c2854e97b959da6089c6dab8",
         "paths": {
-          "index": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\warsaw\\outputs\\attempt-34d160f9bddb4e239c9cc970e40d63a2\\index.tif",
-          "valid_mask": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\warsaw\\outputs\\attempt-34d160f9bddb4e239c9cc970e40d63a2\\valid_mask.tif"
+          "candidate": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\czeladz\\outputs\\attempt-8b526255c2854e97b959da6089c6dab8\\candidate.tif",
+          "index": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\czeladz\\outputs\\attempt-8b526255c2854e97b959da6089c6dab8\\index.tif",
+          "valid_mask": "E:\\github_repos\\Automated_Workflows\\lab6-work\\Labs\\Lab06\\work\\czeladz\\outputs\\attempt-8b526255c2854e97b959da6089c6dab8\\valid_mask.tif"
         },
         "receipt": {
-          "attempt_id": "attempt-34d160f9bddb4e239c9cc970e40d63a2",
+          "attempt_id": "attempt-8b526255c2854e97b959da6089c6dab8",
           "contract": "optical-product-v1",
           "grid": {
             "aoi_bbox": [
-              20.99,
-              52.225,
-              21.04,
-              52.255
+              19.04,
+              50.29,
+              19.1,
+              50.33
             ],
             "crs": "EPSG:32634",
             "shape": [
-              168,
-              172
+              228,
+              220
             ],
             "transform": [
               20,
               0,
-              499300,
+              360380,
               0,
               -20,
-              5789420
+              5577160
             ]
           },
           "layers": {
+            "candidate": {
+              "filename": "candidate.tif",
+              "sha256": "e0dee84c598f402bb97ee354152f9b946253a88bf161356d80233d5520a298fe",
+              "size_bytes": 7142
+            },
             "index": {
               "filename": "index.tif",
-              "sha256": "70126f60413e6517f85759df4e38268d975ff45eb5a992705957d6ba60e954b6",
-              "size_bytes": 90972
+              "sha256": "2ecbdad5b1d988f944094c5c5072bc658e1f83a19c1823202a2843d89a1ddabd",
+              "size_bytes": 172560
             },
             "valid_mask": {
               "filename": "valid_mask.tif",
-              "sha256": "0a873bbaac05bc8d33a8e784bf56db7d904793a47ed25f1f268c9def43e61564",
-              "size_bytes": 3357
+              "sha256": "b4ab57d7875c1b0faf8166118a4d5450f988d4c566ebdf31688ec9603f822135",
+              "size_bytes": 2671
             }
           },
           "metrics": {
-            "aoi_pixels": 28557,
+            "aoi_pixels": 47524,
             "area_convention": "projected UTM grid area; pixel centers inside AOI",
-            "clear_input_fraction": 0.8299891445179816,
-            "clear_input_pixels": 23702,
+            "clear_input_fraction": 0.9955180540358556,
+            "clear_input_pixels": 47311,
             "cloud_screened": true,
             "denominator_or_product_rejected_pixels": 0,
             "excluded_scl": [
@@ -224,74 +239,77 @@
               10,
               11
             ],
-            "grid_pixels": 28896,
+            "grid_pixels": 50160,
             "mask_policy": "scl",
-            "maximum": 0.6160350441932678,
-            "mean": 0.11230221390724182,
-            "minimum": -0.892426073551178,
+            "maximum": 0.36512139439582825,
+            "mean": -0.21920204162597656,
+            "minimum": -0.5364700555801392,
             "outside_nominal_range": 0,
             "pixel_area_m2": 400.0,
             "product_metrics": {
-              "mean_ndmi": 0.11230221390724182
+              "candidate_area_m2": 1928800.0,
+              "candidate_pixels": 4822,
+              "observed_area_m2": 18924400.0,
+              "threshold": 0.0
             },
             "raw_valid_fraction": 1.0,
-            "raw_valid_pixels": 28557,
+            "raw_valid_pixels": 47524,
             "reflectance_resampling": "average; require >=0.999 valid source fraction",
             "scl_counts_in_aoi": {
               "0": 0,
               "1": 0,
-              "10": 0,
+              "10": 178,
               "11": 0,
-              "2": 109,
-              "3": 3208,
-              "4": 7658,
-              "5": 14488,
-              "6": 1556,
-              "7": 93,
-              "8": 189,
-              "9": 1256
+              "2": 10,
+              "3": 0,
+              "4": 35914,
+              "5": 11390,
+              "6": 7,
+              "7": 25,
+              "8": 0,
+              "9": 0
             },
             "scl_resampling": "nearest",
-            "valid_fraction": 0.8299891445179816,
-            "valid_pixels": 23702
+            "valid_fraction": 0.9955180540358556,
+            "valid_pixels": 47311
           },
-          "request_id": "request-ae85cc19bffe9f0563ca1e34e6deb51a58e3534b923033b548e873ef13345abb"
+          "request_id": "request-981aab2a220f299cea4928a839282beb762d6d956310d0d69ea74d6da895a2f7"
         },
-        "checked_at": "2026-11-16T09:15:01.590831Z"
+        "checked_at": "2026-11-23T09:13:37.595333Z"
       },
       "rejected_results": [],
-      "product": "ndmi",
+      "product": "ndbi",
       "grid": {
         "crs": "EPSG:32634",
         "transform": [
           20,
           0,
-          499300,
+          360380,
           0,
           -20,
-          5789420
+          5577160
         ],
         "shape": [
-          168,
-          172
+          228,
+          220
         ],
         "aoi_bbox": [
-          20.99,
-          52.225,
-          21.04,
-          52.255
+          19.04,
+          50.29,
+          19.1,
+          50.33
         ]
       },
       "qc": {
         "assessment_id": 2,
-        "request_id": "request-ae85cc19bffe9f0563ca1e34e6deb51a58e3534b923033b548e873ef13345abb",
-        "attempt_id": "attempt-34d160f9bddb4e239c9cc970e40d63a2",
-        "assessed_at": "2026-11-16T09:14:59.578907Z",
+        "request_id": "request-981aab2a220f299cea4928a839282beb762d6d956310d0d69ea74d6da895a2f7",
+        "attempt_id": "attempt-8b526255c2854e97b959da6089c6dab8",
+        "assessed_at": "2026-11-23T09:13:35.328846Z",
         "policy_version": "coverage-range-v1",
         "policy_json": "{\"minimum_valid_fraction\":0.5,\"outside_nominal_fraction_review\":0.02,\"require_cloud_screening\":true}",
         "outcome": "accepted",
         "reason": "Meets the recorded automatic coverage and range checks; visual/scientific interpretation still required",
-        "metrics_json": "{\"aoi_pixels\":28557,\"area_convention\":\"projected UTM grid area; pixel centers inside AOI\",\"clear_input_fraction\":0.8299891445179816,\"clear_input_pixels\":23702,\"cloud_screened\":true,\"denominator_or_product_rejected_pixels\":0,\"excluded_scl\":[0,1,2,3,7,8,9,10,11],\"grid_pixels\":28896,\"mask_policy\":\"scl\",\"maximum\":0.6160350441932678,\"mean\":0.11230221390724182,\"minimum\":-0.892426073551178,\"outside_nominal_range\":0,\"pixel_area_m2\":400.0,\"product_metrics\":{\"mean_ndmi\":0.11230221390724182},\"raw_valid_fraction\":1.0,\"raw_valid_pixels\":28557,\"reflectance_resampling\":\"average; require >=0.999 valid source fraction\",\"scl_counts_in_aoi\":{\"0\":0,\"1\":0,\"10\":0,\"11\":0,\"2\":109,\"3\":3208,\"4\":7658,\"5\":14488,\"6\":1556,\"7\":93,\"8\":189,\"9\":1256},\"scl_resampling\":\"nearest\",\"valid_fraction\":0.8299891445179816,\"valid_pixels\":23702}"
+        "metrics_json": "{\"aoi_pixels\":47524,\"area_convention\":\"projected UTM grid area; pixel centers inside AOI\",\"clear_input_fraction\":0.9955180540358556,\"clear_input_pixels\":47311,\"cloud_screened\":true,\"denominator_or_product_rejected_pixels\":0,\"excluded_scl\":[0,1,2,3,7,8,9,10,11],\"grid_pixels\":50160,\"mask_policy\":\"scl\",\"maximum\":0.36512139439582825,\"mean\":-0.21920204162597656,\"minimum\":-0.5364700555801392,\"outside_nominal_range\":0,\"pixel_area_m2\":400.0,\"product_metrics\":{\"candidate_area_m2\":1928800.0,\"candidate_pixels\":4822,\"observed_area_m2\":18924400.0,\"threshold\":0.0},\"raw_valid_fraction\":1.0,\"raw_valid_pixels\":47524,\"reflectance_resampling\":\"average; require >=0.999 valid source fraction\",\"scl_counts_in_aoi\":{\"0\":0,\"1\":0,\"10\":178,\"11\":0,\"2\":10,\"3\":0,\"4\":35914,\"5\":11390,\"6\":7,\"7\":25,\"8\":0,\"9\":0},\"scl_resampling\":\"nearest\",\"valid_fraction\":0.9955180540358556,\"valid_pixels\":47311}"
       }
     }
   ],

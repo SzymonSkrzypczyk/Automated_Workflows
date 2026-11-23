@@ -1,21 +1,22 @@
 {
-  "database": "../work/warsaw/catalogue.sqlite",
-  "workspace": "../work/warsaw",
+  "database": "../work/czeladz/catalogue.sqlite",
+  "workspace": "../work/czeladz",
   "max_attempts": 2,
   "jobs": [
     {
-      "member_id": "warsaw_20250615_ndmi",
-      "item_id": "S2C_T34UDC_20250615T095047_L2A",
+      "member_id": "czeladz_20200701_ndbi",
+      "item_id": "S2A_T34UCA_20200701T095501_L2A",
       "aoi_bbox": [
-        20.99,
-        52.225,
-        21.04,
-        52.255
+        19.04,
+        50.29,
+        19.1,
+        50.33
       ],
-      "product": "ndmi",
-      "plugin": "../extensions/ndmi.py",
+      "product": "ndbi",
+      "plugin": "../extensions/ndbi.py",
       "parameters": {
-        "epsilon": 1E-06
+        "epsilon": 1E-06,
+        "threshold": 0.0
       },
       "preparation": {
         "resolution_m": 20,
@@ -34,18 +35,19 @@
       }
     },
     {
-      "member_id": "warsaw_20250630_ndmi",
-      "item_id": "S2B_T34UDC_20250630T095030_L2A",
+      "member_id": "czeladz_20250705_ndbi",
+      "item_id": "S2C_T34UCA_20250705T095217_L2A",
       "aoi_bbox": [
-        20.99,
-        52.225,
-        21.04,
-        52.255
+        19.04,
+        50.29,
+        19.1,
+        50.33
       ],
-      "product": "ndmi",
-      "plugin": "../extensions/ndmi.py",
+      "product": "ndbi",
+      "plugin": "../extensions/ndbi.py",
       "parameters": {
-        "epsilon": 1E-06
+        "epsilon": 1E-06,
+        "threshold": 0.0
       },
       "preparation": {
         "resolution_m": 20,

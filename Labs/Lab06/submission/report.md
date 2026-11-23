@@ -25,48 +25,49 @@ The query in `investigation.sql` lists each attempt with its assessments. For `a
 
 ## Personal product
 
-I used NDMI to compare the 15 and 30 June scenes over central Warsaw and the Vistula. The question, bands, source and preparation choices are in [science_plan.md](science_plan.md). The extension is `extensions/ndmi.py`, version 1.0.0
+I used NDBI to compare candidate built-up surfaces in a part of Czeladź on 1 July 2020 and 5 July 2025. The question, bands, source and preparation choices are in [science_plan.md](science_plan.md). The extension is `extensions/ndbi.py`, version 1.0.0. The bounding box includes surrounding land and is not the municipal boundary
 
-| Date | Usable coverage | Mean NDMI | QC at 0.5 |
-|---|---:|---:|---|
-| 15 June | 99.39% | 0.121721 | accepted |
-| 30 June | 83.00% | 0.112302 | accepted |
+| Date | Raw coverage | Usable coverage | Candidate area at threshold 0 | QC at 0.5 |
+|---|---:|---:|---:|---|
+| 1 July 2020 | 100% | 99.81% | 2,361,200 m² | accepted |
+| 5 July 2025 | 100% | 99.55% | 1,928,800 m² | accepted |
 
-These means include buildings, water and bare ground as well as vegetation, and the second date has less usable coverage. On the 23,672 pixels valid on both dates, the mean was 0.129665 on 15 June and 0.112476 on 30 June, a difference of −0.017188. This is a mixed-surface spectral change, not evidence on its own of a change in vegetation moisture. Field or reference data and a vegetation-specific analysis would help interpret it
+On the 47,240 pixels valid on both dates, 5,836 were candidates in 2020 and 4,797 in 2025. There were 2,036 transitions into the candidate class and 3,075 out of it, a net change of −415,600 m² at 400 m² per pixel. These are spectral threshold transitions, not confirmed construction or demolition, and this result does not establish urban expansion. Crops, exposed soil, changing moisture and mixed pixels can change the classification. I would inspect gain and loss locations against independent dated high-resolution imagery and use labelled samples to measure errors before making a land-use claim
 
-The first run launched two attempts and repeating it launched none. Switching the 15 June mask to `nodata_only` produced request `request-335fecccb942a6de1852e7afefb0ed35967ffde9a09dcff96bc99ca666025213` and a new attempt, with mean 0.120784 and 100% usable pixels. QC marked it for review because screening was disabled. The small difference here does not mean cloud screening is unnecessary
+The first run launched two attempts and repeating it launched none. Raising the 2025 threshold from 0 to 0.1 created request `request-ec50f2e3e5b0b6875c4ad58f99e73355574344983618a7b3e0a14955e15ccde1` and a new attempt. Its candidate area fell from 1,928,800 to 246,800 m² over the 2025 valid pixels. This sensitivity shows that the starting threshold of 0 needs validation rather than being treated as an established boundary between built and unbuilt land
 
-For an independent arithmetic check I used NIR 0.6 and SWIR1 0.2, which gives 0.5 by hand. The test returned 0.5 and also checked that a zero denominator and a masked pixel become NaN. This checks the calculation and mask handling, but does not validate the satellite map against ground measurements
+For an independent arithmetic check I used SWIR1 0.6 and NIR 0.2, which gives NDBI 0.5 by hand. The test returned 0.5 and candidate class 1, and checked that a zero denominator and a masked pixel become NaN. I also calculated a real 2020 output pixel from the bundled raw bands and their calibration: NIR 0.2778 and SWIR1 0.1198 give −0.397384, matching the raster value −0.397384. These checks do not validate the map against ground observations
 
 ## Reproduction and evidence
 
-From `Labs/Lab06`, run `python submission/reproduce.py` in the lab environment. It registers the included inputs, creates local manifests, runs both configurations and writes reports and the common-pixel comparison to `work/warsaw-reproduction`. To keep an existing workspace, choose a new one with `--workspace work/another-run`. It uses no network for the bundled inputs
+From `Labs/Lab06`, run `python submission/reproduce.py` in the lab environment. It registers the included inputs, creates local manifests, runs both configurations and writes reports and the common-pixel comparison to `work/czeladz-reproduction`. To keep an existing workspace, choose a new one with `--workspace work/another-run`. It uses no network for the bundled inputs
 
 The retained `submission/inputs` bundle contains the source item records, B08, B11 and SCL subsets, checksums and acquisition metadata. The script creates new local manifests because those in `submission/evidence` record the original absolute paths and environment. Different software versions or operating systems are recorded in the new request identity and may affect the results
 
 The individual commands used for the original run are below
 
 ```text
-python -m eo_processing init --database work/warsaw/catalogue.sqlite
-python -m eo_processing register --database work/warsaw/catalogue.sqlite --bundle submission/inputs
-python -m eo_processing plan --config config/personal_batch.json --out work/warsaw/batch.json
-python -m eo_processing run --manifest work/warsaw/batch.json
-python -m eo_processing assess --manifest work/warsaw/batch.json --minimum-valid-fraction 0.5
-python -m eo_processing report --manifest work/warsaw/batch.json --out work/warsaw/report
-python -m eo_processing run --manifest work/warsaw/batch.json
-python -m eo_processing plan --config config/personal_nodata.json --out work/warsaw/nodata_batch.json
-python -m eo_processing run --manifest work/warsaw/nodata_batch.json
-python -m eo_processing assess --manifest work/warsaw/nodata_batch.json
-python -m eo_processing report --manifest work/warsaw/nodata_batch.json --out work/warsaw/nodata_report
-python submission/compare_ndmi.py work/warsaw/report/report.json
-python -m pytest tests/test_personal_ndmi.py
+python -m eo_processing init --database work/czeladz/catalogue.sqlite
+python -m eo_processing register --database work/czeladz/catalogue.sqlite --bundle submission/inputs
+python -m eo_processing plan --config config/personal_batch.json --out work/czeladz/batch.json
+python -m eo_processing run --manifest work/czeladz/batch.json
+python -m eo_processing assess --manifest work/czeladz/batch.json --minimum-valid-fraction 0.5
+python -m eo_processing report --manifest work/czeladz/batch.json --out work/czeladz/report
+python -m eo_processing run --manifest work/czeladz/batch.json
+python -m eo_processing plan --config config/personal_threshold010.json --out work/czeladz/threshold010_batch.json
+python -m eo_processing run --manifest work/czeladz/threshold010_batch.json
+python -m eo_processing assess --manifest work/czeladz/threshold010_batch.json
+python -m eo_processing report --manifest work/czeladz/threshold010_batch.json --out work/czeladz/threshold010_report
+python submission/compare_ndbi.py work/czeladz/report/report.json
+python submission/check_real_ndbi.py work/czeladz/report/report.json
+python -m pytest tests/test_personal_ndbi.py
 python -m eo_processing check-core
 ```
 
-I obtained the inputs with `python -m eo_processing acquire --config config/personal_acquisition.json --destination work/warsaw/inputs` after searching the public Earth Search catalogue. The exact item IDs, source URLs, checksums and calibration are in `submission/inputs/manifest.json`. The frozen manifests and generated JSON and HTML reports are in `submission/evidence`. `check-core` reported version 1.0.0 identical to the class release with no changed files
+I obtained the inputs with `python -m eo_processing acquire --config config/personal_acquisition.json --destination work/czeladz/inputs` after searching the public Earth Search catalogue. The exact item IDs, source URLs, checksums and calibration are in `submission/inputs/manifest.json`. The frozen manifests and generated JSON and HTML reports are in `submission/evidence`. `check-core` reported version 1.0.0 identical to the class release with no changed files
 
 ## Debugging clinic and assistance
 
 The original attempt had written a temporary raster but failed before publishing and recording a successful result. Opening the existing binary file with `r+b` provides write access for the Windows flush without truncating it. The exercise check passed twice and confirmed that all 77,910 bytes stayed unchanged. The shared core was already corrected, so editing the exercise did not change its hash. The original runner correction changed the processing code hash and therefore needed new manifests while preserving the failed attempts
 
-I used Codex to help trace the package, write the extension and organize the results. I checked the index against the USGS definition, ran the arithmetic and invalid-pixel test, inspected the recorded coverage and compared the repeat and changed-mask requests. The AOI-wide mean includes several land covers, so I did not treat it as a direct vegetation moisture measurement
+I used Codex to help trace the package, write the extension and organize the results. I checked the equation against the NDBI source, ran the arithmetic and invalid-pixel test, inspected the recorded coverage and compared the repeat and changed-threshold requests. I did not treat the candidate transitions as proof of construction because bare ground and other surfaces can also cross the threshold

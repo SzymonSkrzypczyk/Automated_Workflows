@@ -1,4 +1,4 @@
-"""Reproduce the Warsaw investigation in a new local workspace."""
+"""Reproduce the Czeladź investigation in a new local workspace."""
 import argparse
 import json
 from pathlib import Path
@@ -16,7 +16,7 @@ def run(*args):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--workspace", default="work/warsaw-reproduction",
+    parser.add_argument("--workspace", default="work/czeladz-reproduction",
                         help="New workspace, relative to the Lab 06 directory")
     args = parser.parse_args()
     workspace = (ROOT / args.workspace).resolve()
@@ -27,12 +27,12 @@ def main():
     run("init", "--database", str(database))
     run("register", "--database", str(database), "--bundle", str(ROOT / "submission/inputs"))
 
-    for source, name in (("personal_batch.json", "batch"), ("personal_nodata.json", "nodata_batch")):
+    for source, name in (("personal_batch.json", "batch"), ("personal_threshold010.json", "threshold010_batch")):
         config = json.loads((ROOT / "config" / source).read_text(encoding="utf-8-sig"))
         config["database"] = str(database)
         config["workspace"] = str(workspace)
         for job in config["jobs"]:
-            job["plugin"] = str(ROOT / "extensions/ndmi.py")
+            job["plugin"] = str(ROOT / "extensions/ndbi.py")
         local_config = workspace / f"{name}_config.json"
         local_config.write_text(json.dumps(config, indent=2) + "\n", encoding="utf-8")
         manifest = workspace / f"{name}.json"
@@ -41,7 +41,9 @@ def main():
         run("assess", "--manifest", str(manifest), "--minimum-valid-fraction", "0.5")
         run("report", "--manifest", str(manifest), "--out", str(workspace / f"{name}_report"))
 
-    subprocess.run([sys.executable, str(ROOT / "submission/compare_ndmi.py"),
+    subprocess.run([sys.executable, str(ROOT / "submission/compare_ndbi.py"),
+                    str(workspace / "batch_report/report.json")], cwd=ROOT, check=True)
+    subprocess.run([sys.executable, str(ROOT / "submission/check_real_ndbi.py"),
                     str(workspace / "batch_report/report.json")], cwd=ROOT, check=True)
     print(f"\nResults saved in {workspace}")
 

@@ -1,0 +1,9 @@
+{
+  "common_pixels": 47240,
+  "pixel_area_m2": 400.0,
+  "first_candidate_pixels": 5836,
+  "second_candidate_pixels": 4797,
+  "candidate_gain_pixels": 2036,
+  "candidate_loss_pixels": 3075,
+  "net_candidate_area_change_m2": -415600.0
+}
